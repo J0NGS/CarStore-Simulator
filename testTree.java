@@ -3,29 +3,30 @@ import AVL.AVLTree;
 public class testTree {
     public static void main(String[] args) {
         AVLTree<Integer> avlTree = new AVLTree<>();
-
+        
+        // Inserindo elementos na árvore
         avlTree.insert(10);
         avlTree.insert(20);
         avlTree.insert(5);
-        avlTree.insert(3);
         avlTree.insert(15);
-
-        System.out.println("In-order traversal:");
+        avlTree.insert(25);
+        
+        // Exibindo árvore em ordens diferentes
+        System.out.println("In-Order Traversal:");
         avlTree.inOrder();
-
-        System.out.println("Pre-order traversal:");
+        
+        System.out.println("\nPre-Order Traversal:");
         avlTree.preOrder();
-
-        System.out.println("Post-order traversal:");
+        
+        System.out.println("\nPost-Order Traversal:");
         avlTree.postOrder();
-
-        System.out.println("Height of the tree: " + avlTree.height());
-
-        System.out.println("Searching for value 5: " + avlTree.search(5));
-
+        
+        // Removendo elementos da árvore
         avlTree.remove(10);
-
-        System.out.println("In-order traversal after removing 10:");
+        avlTree.remove(25);
+        
+        // Exibindo árvore após remoção
+        System.out.println("\nIn-Order Traversal after removal:");
         avlTree.inOrder();
     }
 }
