@@ -1,4 +1,7 @@
 package AVL;
+
+import entity.Vehicle;
+
 /**
  * Classe que representar uma árvore AVL
  * @author João Gonçalo
@@ -131,7 +134,7 @@ public class AVLTree <T extends Comparable> {
             return false;                           // Não encontrou o elemento
         }
 
-        int compareResult = data.compareTo(node.getData());
+        int compareResult = data.compareTo((node.getData()));
 
         if (compareResult == 0)
             return true;                            // Encontrou o elemento

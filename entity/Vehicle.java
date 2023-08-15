@@ -71,10 +71,10 @@ public class Vehicle implements Comparable<Vehicle>{
 
     @Override
     public int compareTo(Vehicle vehicle){
-        int renavam_1 = Integer.parseInt(this.renavam);
-        int renavam_2 = Integer.parseInt(vehicle.getRenavam());
+        Double renavam_1 = Double.parseDouble(this.renavam);
+        Double renavam_2 = Double.parseDouble(vehicle.getRenavam());
 
-        return Integer.compare(renavam_1, renavam_2);
+        return Double.compare(renavam_1, renavam_2);
     }
 
 
