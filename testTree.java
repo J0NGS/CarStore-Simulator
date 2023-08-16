@@ -1,4 +1,5 @@
 import AVL.AVLTree;
+import AVL.Node;
 import entity.Driver;
 import entity.Vehicle;
 
@@ -22,9 +23,9 @@ public class testTree {
 
         // Buscando veículo na árvore
         System.out.println("\nSearching for a vehicle:");
-        Vehicle searchVehicle = new Vehicle("", "45678901200", null, "", 0);
-        boolean found = vehicleTree.search(searchVehicle);
-        System.out.println("Vehicle found: " + found);
+        Vehicle searchVehicle = new Vehicle("", "45678901201", null, "", 0);
+        Vehicle found = vehicleTree.search(searchVehicle);
+        System.out.println("Vehicle found: " + "\n" + "Renavam : " + found.getRenavam() + "\n" + found.getCarPlate());
     }
 }
 

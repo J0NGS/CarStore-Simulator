@@ -4,6 +4,7 @@ package AVL;
  * @author João Gonçalo
  */
 public class Node <T> {
+    private String Key;
     private Node<T> left, right;   // Ponteiro para os nós seguintes
     private int height;            // Altura do nó
     private T data;                // Elemento a ser guardado no nó

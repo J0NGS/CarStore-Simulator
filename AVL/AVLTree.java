@@ -1,5 +1,8 @@
 package AVL;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import entity.Vehicle;
 
 /**
@@ -35,8 +38,19 @@ public class AVLTree <T extends Comparable> {
     }
 
     // Função de busca de elemento
-    public boolean search(T data) {
+    public T search(T data) {
         return search(root, data);
+    }
+
+    public List<T> getAllData() {
+        List<T> dataList = new ArrayList<>();
+        getAllData(root, dataList);
+        return dataList;
+    }
+
+    // Metodo que retorna a quantidade de nós na arvore
+    public int countNodes() {
+        return countNodes(root);
     }
 
     // Metodo para exibir a arvore em ordem
@@ -58,6 +72,17 @@ public class AVLTree <T extends Comparable> {
         /* Funções privadas */
 /////////////////////////////////////
     
+    // Função para contar os nós na árvore
+    private int countNodes(Node<T> node) {
+        if (node == null) {
+            return 0;
+        }
+    
+    // Conta os nós nas subárvores esquerda e direita e adiciona 1 para o nó atual
+    return 1 + countNodes(node.getLeft()) + countNodes(node.getRight());
+}
+
+
     // função para inserir dado na arvore
     private Node<T> insert(T data, Node<T> node) {
         if (node == null) 
@@ -128,23 +153,37 @@ public class AVLTree <T extends Comparable> {
         }
     }
 
-    // função para encontrar elemento na arvore
-    private boolean search(Node<T> node, T data) {
+
+    // Função para percorrer a árvore em ordem e adicionar os dados à lista
+    private void getAllData(Node<T> node, List<T> dataList) {
         if (node == null) {
-            return false;                           // Não encontrou o elemento
+            System.out.println("Arvore vazia");
         }
 
-        int compareResult = data.compareTo((node.getData()));
-
-        if (compareResult == 0)
-            return true;                            // Encontrou o elemento
-        else if (compareResult < 0)
-            return search(node.getLeft(), data);    // Busca na subárvore esquerda
-        else 
-            return search(node.getRight(), data);   // Busca na subárvore direita
-
+        // Percorre a subárvore esquerda, adiciona o valor do nó atual e percorre a subárvore direita
+        getAllData(node.getLeft(), dataList);
+        dataList.add(node.getData());
+        getAllData(node.getRight(), dataList);
     }
 
+
+    // função para encontrar elemento na arvore pela placa do carro
+    private T search(Node<T> node, T data) {
+        if (node == null) {
+            System.out.println("Nenhum dado encontrado");
+            return null;  // Elemento não encontrado
+        }
+    
+        int compareResult = data.compareTo(node.getData());
+    
+        if (compareResult == 0) {
+            return node.getData();  // Elemento encontrado
+        } else if (compareResult < 0) {
+            return search(node.getLeft(), data);  // Busca na subárvore esquerda
+        } else {
+            return search(node.getRight(), data);  // Busca na subárvore direita
+        }
+    }
     // para encontrar o node minimo
     private T min(Node<T> node){
         /**
