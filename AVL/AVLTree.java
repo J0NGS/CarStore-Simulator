@@ -157,9 +157,9 @@ public class AVLTree <T extends Comparable> {
     // Função para percorrer a árvore em ordem e adicionar os dados à lista
     private void getAllData(Node<T> node, List<T> dataList) {
         if (node == null) {
-            System.out.println("Arvore vazia");
+            return;  // Saia da função recursiva quando o nó for nulo
         }
-
+    
         // Percorre a subárvore esquerda, adiciona o valor do nó atual e percorre a subárvore direita
         getAllData(node.getLeft(), dataList);
         dataList.add(node.getData());

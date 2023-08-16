@@ -28,6 +28,14 @@ public class Vehicle implements Comparable<Vehicle>{
         this.yearProduction = yearProduction;
     }
 
+    public Vehicle(String renavam) {
+        this.carPlate = null;
+        this.renavam = renavam;
+        this.driver = null;
+        this.model = null;
+        this.yearProduction = 0;
+    }
+
     //Getters & Setters
     public String getCarPlate() {
         return this.carPlate;
