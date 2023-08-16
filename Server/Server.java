@@ -59,6 +59,11 @@ public class Server {
                 // Leia a mensagem do cliente
                 String clientMessage = in.readLine();
                 
+                
+
+
+
+
                 // Implemente a lógica de processamento da mensagem
                 // Você pode usar estruturas de controle para identificar a operação solicitada
                 // e executar as ações apropriadas na base de dados AVLTree
