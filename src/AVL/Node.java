@@ -1,16 +1,12 @@
-package AVL;
+package src.AVL;
 /**
- * Classe para representar um nó de uma Árvore AVL
+ * Classe para representar um no de uma Arvore AVL
  * @author João Gonçalo
  */
 public class Node <T> {
-    private String Key;
-    private Node<T> left, right;   // Ponteiro para os nós seguintes
-    private int height;            // Altura do nó
-    private T data;                // Elemento a ser guardado no nó
-
-
-
+    private Node<T> left, right;   // Ponteiro para os nos seguintes
+    private int height;            // Altura do no
+    private T data;                // Elemento a ser guardado no no
 
     public Node(T data) {
         this.left = null;  

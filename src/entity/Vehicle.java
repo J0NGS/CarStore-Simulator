@@ -1,11 +1,12 @@
-package entity;
+package src.entity;
+import java.io.Serializable;
 import java.util.Objects;
 
 /**
  * classe para representar um veiculo
  * @author João Gonçalo
  */
-public class Vehicle implements Comparable<Vehicle>{
+public class Vehicle implements Comparable<Vehicle>, Serializable{
     private String carPlate;    //  Placa do carro
     private String renavam;     //  Renavam do carro
     private Driver driver;      //  Motorista do carro
@@ -36,13 +37,27 @@ public class Vehicle implements Comparable<Vehicle>{
         this.yearProduction = 0;
     }
 
+
+    public Vehicle() {
+    }
+
+
     //Getters & Setters
     public String getCarPlate() {
         return this.carPlate;
     }
 
     public void setCarPlate(String carPlate) {
-        this.carPlate = carPlate;
+        try {
+            carPlate.toUpperCase();
+            if(carPlate.length() != 7)
+                throw new Exception("Placa com quantidade inválida de caractéres");
+            if(carPlate.matches("[A-Z]{3}[0-9][A-Z][0-9]{2}"))
+                throw new Exception("Placa não respeita o padrão Mercosul [ABC1D23]");
+            this.carPlate = carPlate;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public String getRenavam() {
@@ -50,7 +65,15 @@ public class Vehicle implements Comparable<Vehicle>{
     }
 
     public void setRenavam(String renavam) {
-        this.renavam = renavam;
+        try {
+            if(renavam.length()!= 11)
+                throw new Exception("Renavam não possui os 11 digitos necessários");
+            if(!renavam.matches("[0-9]"))
+                throw new Exception("Renavam inválido, Renavam só pode conter números");
+            this.renavam = renavam;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public Driver getDriver() {

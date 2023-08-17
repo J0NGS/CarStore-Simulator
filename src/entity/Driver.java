@@ -1,11 +1,12 @@
-package entity;
+package src.entity;
+import java.io.Serializable;
 import java.util.Objects;
 
 /**
  * Classe para representar o condutor de um veiculo
  * @author João Gonçalo
  */
-public class Driver {
+public class Driver implements Serializable{
     public String name;
     private String cpf;
 
@@ -18,6 +19,10 @@ public class Driver {
     public Driver(String name, String cpf) {
         this.name = name;
         this.cpf = cpf;
+    }
+
+
+    public Driver() {
     }
 
 
@@ -35,7 +40,15 @@ public class Driver {
     }
 
     public void setCpf(String cpf) {
-        this.cpf = cpf;
+        try {
+            if(!cpf.matches("[0-9]*"))
+                throw new Exception("Cpf inválido, só pode conter digitos");
+            if(cpf.length()!= 11)
+                throw new Exception("Cpf inválido, só pode conter 11 digitos");
+            this.cpf = cpf;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     //Equals & Hash

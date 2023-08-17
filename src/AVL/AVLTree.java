@@ -1,12 +1,12 @@
-package AVL;
+package src.AVL;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import entity.Vehicle;
+import src.AVL.Node;
 
 /**
- * Classe que representar uma árvore AVL
+ * Classe que representar uma arvore AVL
  * @author João Gonçalo
  */
 public class AVLTree <T extends Comparable> {
@@ -51,6 +51,11 @@ public class AVLTree <T extends Comparable> {
     // Metodo que retorna a quantidade de nós na arvore
     public int countNodes() {
         return countNodes(root);
+    }
+    
+    // Metodo que retorna a altura da arvore
+    public int getTreeHeight(){
+        return treeHeight(root);
     }
 
     // Metodo para exibir a arvore em ordem
@@ -232,6 +237,17 @@ public class AVLTree <T extends Comparable> {
             return 0;
     }
 
+    // Função para calcular a altura da árvore
+    private int treeHeight(Node<T> node) {
+        if (node == null) {
+            return -1; // Retorna -1 para indicar que um nó nulo tem altura -1
+        }
+
+        int leftHeight = treeHeight(node.getLeft());
+        int rightHeight = treeHeight(node.getRight());
+
+        return Math.max(leftHeight, rightHeight) + 1;
+    }
 
     // Metodo para aplicar as rotações e balancear a árvore
     private Node<T> balanced(Node<T> node) {
@@ -277,6 +293,7 @@ public class AVLTree <T extends Comparable> {
         updateHeight(node);
         updateHeight(rightNode);
 
+        System.out.println("Rotação simples a esquerda");
         return rightNode;
     }
 
@@ -289,6 +306,8 @@ public class AVLTree <T extends Comparable> {
         node.setLeft(rightNode);
         updateHeight(node);
         updateHeight(leftNode);
+
+        System.out.println("Rotação simples a direita");
         return leftNode;
     }
 }
