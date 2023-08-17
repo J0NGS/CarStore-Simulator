@@ -18,7 +18,7 @@ public class Server {
             System.out.println("Waiting for requests...");
 			
             // Criando um arquivo para redirecionar a saída
-            File logFile = new File("E:/Documentos/GitHub/joao-goncalo-pratica-off-1-main/Server/serverLog.txt");
+            File logFile = new File("E:/Documentos/GitHub/joao-goncalo-pratica-off-1-main/src/Server/serverLog.txt");
             PrintStream printStream = new PrintStream(new FileOutputStream(logFile));
             System.setOut(printStream); // Redirecionando a saída padrão
             System.out.println("started...");

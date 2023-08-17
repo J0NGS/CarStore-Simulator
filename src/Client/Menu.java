@@ -42,28 +42,27 @@ public class Menu {
                 break;
             }
             //Insert
-            case 1:{
-                limpatela();
-                Vehicle vehicle = new Vehicle();
-                Driver driver = new Driver();
-                
-                System.out.println("======Cadastro de veiculo======");
-                System.out.print(".Renavam: ");
-                vehicle.setRenavam(scn.nextLine());
-                System.out.print("\n.Placa do carro: ");
-                vehicle.setCarPlate(scn.nextLine());
-                System.out.print("\n.Modelo do carro: ");
-                vehicle.setModel(scn.nextLine());
-                System.out.print("\n.Ano de fabricação: ");
-                vehicle.setYearProduction(scn.nextInt());
-                scn.nextLine(); //Limpando o buffer
-                System.out.print("\n.Nome do condutor: ");
-                driver.setName(scn.nextLine());
-                System.out.print("\n.Cpf do condutor(apenas digitos): ");
-                driver.setCpf(scn.nextLine());
-                vehicle.setDriver(driver);
-
+            case 1:{                
                 try {
+                    limpatela();
+                    Vehicle vehicle = new Vehicle();
+                    Driver driver = new Driver();
+                    
+                    System.out.println("======Cadastro de veiculo======");
+                    System.out.print(".Renavam: ");
+                    vehicle.setRenavam(scn.nextLine());
+                    System.out.print("\n.Placa do carro: ");
+                    vehicle.setCarPlate(scn.nextLine());
+                    System.out.print("\n.Modelo do carro: ");
+                    vehicle.setModel(scn.nextLine());
+                    System.out.print("\n.Ano de fabricação: ");
+                    vehicle.setYearProduction(scn.nextInt());
+                    scn.nextLine(); //Limpando o buffer
+                    System.out.print("\n.Nome do condutor: ");
+                    driver.setName(scn.nextLine());
+                    System.out.print("\n.Cpf do condutor(apenas digitos): ");
+                    driver.setCpf(scn.nextLine());
+                    vehicle.setDriver(driver);
                     server.insert(vehicle);
                 } catch (RemoteException e) {
                     e.printStackTrace();
@@ -72,28 +71,33 @@ public class Menu {
             }
             //Update
             case 2:{
-                limpatela();
-                Vehicle vehicle = new Vehicle();
-                Driver driver = new Driver();
-                
-                System.out.println("======Atualização de veiculo======");
-                System.out.print(".Renavam(Chave de busca): ");
-                vehicle.setRenavam(scn.nextLine());
-                System.out.println("\n.======Dados atualizados======");
-                System.out.print("\n.Placa do carro: ");
-                vehicle.setCarPlate(scn.nextLine());
-                System.out.print("\n.Modelo do carro: ");
-                vehicle.setModel(scn.nextLine());
-                System.out.print("\n.Ano de fabricação: ");
-                vehicle.setYearProduction(scn.nextInt());
-                scn.nextLine(); //Limpando o buffer
-                System.out.print("\n.Nome do condutor: ");
-                driver.setName(scn.nextLine());
-                System.out.print("\n.Cpf do condutor(apenas digitos): ");
-                driver.setCpf(scn.nextLine());
-                vehicle.setDriver(driver);
                 try {
-                    server.update(vehicle);
+                    limpatela();
+                    Vehicle vehicle = new Vehicle();
+                    Driver driver = new Driver();
+                    
+                    System.out.println("======Atualização de veiculo======");
+                    System.out.print(".Renavam(Chave de busca): ");
+                    vehicle.setRenavam(scn.nextLine());
+                        if(this.server.search(vehicle.getRenavam()) != null){
+                        System.out.println("\n.======Dados atualizados======");
+                        System.out.print("\n.Placa do carro: ");
+                        vehicle.setCarPlate(scn.nextLine());
+                        System.out.print("\n.Modelo do carro: ");
+                        vehicle.setModel(scn.nextLine());
+                        System.out.print("\n.Ano de fabricação: ");
+                        vehicle.setYearProduction(scn.nextInt());
+                        scn.nextLine(); //Limpando o buffer
+                        System.out.print("\n.Nome do condutor: ");
+                        driver.setName(scn.nextLine());
+                        System.out.print("\n.Cpf do condutor(apenas digitos): ");
+                        driver.setCpf(scn.nextLine());
+                        vehicle.setDriver(driver);
+                        server.update(vehicle);
+                        }
+                        else{
+                            throw new Exception("Nenhum veículo encontrado com esse Renavam");
+                        }
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -151,12 +155,13 @@ public class Menu {
             }
             //Remove
             case 5:{
-                limpatela();
-                System.out.println("======Remoção de veiculo======");
-                System.out.print(".Renavam(Chave de busca): ");
-                Vehicle vehicle = new Vehicle(scn.nextLine());
-
                 try {
+                    limpatela();
+                    
+                    Vehicle vehicle = new Vehicle();
+                    System.out.println("======Remoção de veiculo======");
+                    System.out.print(".Renavam(Chave de busca): ");
+                    vehicle.setRenavam(scn.nextLine());
                     server.remove(vehicle);
                 } catch (Exception e) {
                     e.printStackTrace();

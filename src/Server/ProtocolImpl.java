@@ -24,7 +24,7 @@ public class ProtocolImpl extends UnicastRemoteObject implements Protocol {
 
     // Função para inicializar os dados a partir do arquivo
     public void init() {
-        String fileName = "E:/Documentos/GitHub/joao-goncalo-pratica-off-1-main/Server/carros.txt"; // Nome do arquivo de dados
+        String fileName = "E:/Documentos/GitHub/joao-goncalo-pratica-off-1-main/src/Server/carros.txt"; // Nome do arquivo de dados
         int linesToRead = 50; // Número de linhas a serem lidas
 
         try (Scanner scanner = new Scanner(new File(fileName))) {

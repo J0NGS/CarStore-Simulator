@@ -32,9 +32,16 @@ public class AVLTree <T extends Comparable> {
 
     // Metoto para remover um elemento
     public AVLTree<T> remove(T data){
-        root = remove(data, root);
-        System.out.println("removed...");
-        return this;
+        try {
+            if(search(data) == null)
+                throw new Exception("Nenhum dado encontrado");
+            root = remove(data, root);
+            System.out.println("removed...");
+            return this;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return this;
+        }
     }
 
     // Função de busca de elemento

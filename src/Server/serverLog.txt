@@ -1,0 +1,193 @@
+started...
+Waiting for requests...
+Add...
+Renavam[12345678901]
+Altura da arvore[0]
+Add...
+Renavam[98765432102]
+Altura da arvore[1]
+Rotação simples a direita
+Rotação simples a esquerda
+Add...
+Renavam[65432198703]
+Altura da arvore[1]
+Add...
+Renavam[32165465404]
+Altura da arvore[2]
+Rotação simples a esquerda
+Add...
+Renavam[45612312305]
+Altura da arvore[2]
+Add...
+Renavam[78945698706]
+Altura da arvore[2]
+Rotação simples a esquerda
+Rotação simples a direita
+Add...
+Renavam[98712332107]
+Altura da arvore[2]
+Add...
+Renavam[12378965408]
+Altura da arvore[3]
+Add...
+Renavam[45698712309]
+Altura da arvore[3]
+Add...
+Renavam[78932145610]
+Altura da arvore[3]
+Rotação simples a esquerda
+Add...
+Renavam[12378978911]
+Altura da arvore[3]
+Add...
+Renavam[98732165412]
+Altura da arvore[3]
+Rotação simples a direita
+Add...
+Renavam[65498732113]
+Altura da arvore[3]
+Add...
+Renavam[32165465414]
+Altura da arvore[3]
+Add...
+Renavam[45612312315]
+Altura da arvore[4]
+Add...
+Renavam[78945698716]
+Altura da arvore[4]
+Rotação simples a direita
+Add...
+Renavam[98712332117]
+Altura da arvore[4]
+Add...
+Renavam[12378965418]
+Altura da arvore[4]
+Add...
+Renavam[45698712319]
+Altura da arvore[4]
+Add...
+Renavam[78932145620]
+Altura da arvore[4]
+Add...
+Renavam[12378978921]
+Altura da arvore[4]
+Add...
+Renavam[98732165422]
+Altura da arvore[4]
+Add...
+Renavam[65498732123]
+Altura da arvore[4]
+Add...
+Renavam[32165465424]
+Altura da arvore[4]
+Add...
+Renavam[45612312325]
+Altura da arvore[5]
+Add...
+Renavam[78945698726]
+Altura da arvore[5]
+Add...
+Renavam[98712332127]
+Altura da arvore[5]
+Rotação simples a direita
+Rotação simples a esquerda
+Add...
+Renavam[12378965428]
+Altura da arvore[5]
+Add...
+Renavam[45698712329]
+Altura da arvore[5]
+Add...
+Renavam[78932145630]
+Altura da arvore[5]
+Add...
+Renavam[12378978931]
+Altura da arvore[5]
+Rotação simples a esquerda
+Rotação simples a direita
+Add...
+Renavam[98732165432]
+Altura da arvore[5]
+Rotação simples a esquerda
+Add...
+Renavam[65498732133]
+Altura da arvore[5]
+Rotação simples a esquerda
+Add...
+Renavam[32165465434]
+Altura da arvore[5]
+Rotação simples a esquerda
+Add...
+Renavam[45698712335]
+Altura da arvore[5]
+Rotação simples a esquerda
+Add...
+Renavam[78932145636]
+Altura da arvore[5]
+Rotação simples a esquerda
+Add...
+Renavam[12378978937]
+Altura da arvore[5]
+Add...
+Renavam[98732165438]
+Altura da arvore[5]
+Add...
+Renavam[65498732139]
+Altura da arvore[5]
+Add...
+Renavam[32165465440]
+Altura da arvore[5]
+Rotação simples a esquerda
+Add...
+Renavam[45612312341]
+Altura da arvore[5]
+Rotação simples a esquerda
+Add...
+Renavam[78945698742]
+Altura da arvore[5]
+Rotação simples a esquerda
+Add...
+Renavam[98712332143]
+Altura da arvore[5]
+Add...
+Renavam[12378965444]
+Altura da arvore[5]
+Add...
+Renavam[45698712345]
+Altura da arvore[6]
+Add...
+Renavam[78932145646]
+Altura da arvore[6]
+Rotação simples a esquerda
+Add...
+Renavam[12378978947]
+Altura da arvore[6]
+Rotação simples a esquerda
+Rotação simples a direita
+Add...
+Renavam[98732165448]
+Altura da arvore[6]
+Rotação simples a esquerda
+Add...
+Renavam[65498732149]
+Altura da arvore[6]
+Rotação simples a esquerda
+Add...
+Renavam[32165465450]
+Altura da arvore[6]
+Rotação simples a esquerda
+Rotação simples a direita
+Add...
+Renavam[12345678999]
+Altura da arvore[6]
+removed...
+Renavam[12345678999]
+Altura da arvore[6]
+Rotação simples a direita
+Rotação simples a esquerda
+Add...
+Renavam[12345678999]
+Altura da arvore[6]
+removed...
+Renavam[12345678999]
+Altura da arvore[6]
