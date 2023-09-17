@@ -13,13 +13,16 @@ public class Menu {
     private Protocol server;
     
     
-    
+    //Inicializa o servidor de interação
     public Menu(Protocol server) {
         this.server = server;
     }
     
+    //Função para limpar a tela
     public static void limpatela() {System.out.print("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n "); }
 
+
+    //Metodo para exibir as opções do menu
     public void options(){
         System.out.println("---------------------------------------");
         System.out.println("1. Inserir novo veicúlo");
@@ -33,9 +36,12 @@ public class Menu {
         System.out.println("---------------------------------------");
     }
     
+    //Metodo para executar instrução de acordo com a opção selecionada
     public void run(int option){
         Scanner scn = new Scanner(System.in);
+
         switch(option){
+            //Exit
             case 0:{
                 limpatela();
                 System.out.println("Fechando...");
@@ -45,24 +51,33 @@ public class Menu {
             case 1:{                
                 try {
                     limpatela();
+                    
+                    //Inicializa veículo e condutor para inserção
                     Vehicle vehicle = new Vehicle();
                     Driver driver = new Driver();
                     
                     System.out.println("======Cadastro de veiculo======");
                     System.out.print(".Renavam: ");
                     vehicle.setRenavam(scn.nextLine());
+                    
                     System.out.print("\n.Placa do carro: ");
                     vehicle.setCarPlate(scn.nextLine());
+                    
                     System.out.print("\n.Modelo do carro: ");
                     vehicle.setModel(scn.nextLine());
+                    
                     System.out.print("\n.Ano de fabricação: ");
                     vehicle.setYearProduction(scn.nextInt());
                     scn.nextLine(); //Limpando o buffer
+                    
                     System.out.print("\n.Nome do condutor: ");
                     driver.setName(scn.nextLine());
+                    
                     System.out.print("\n.Cpf do condutor(apenas digitos): ");
                     driver.setCpf(scn.nextLine());
                     vehicle.setDriver(driver);
+                    
+                    //Inserindo de acordo com protocolo do servidor
                     server.insert(vehicle);
                 } catch (RemoteException e) {
                     e.printStackTrace();
@@ -79,20 +94,27 @@ public class Menu {
                     System.out.println("======Atualização de veiculo======");
                     System.out.print(".Renavam(Chave de busca): ");
                     vehicle.setRenavam(scn.nextLine());
+                        //Garantindo que veiculo existe
                         if(this.server.search(vehicle.getRenavam()) != null){
                         System.out.println("\n.======Dados atualizados======");
                         System.out.print("\n.Placa do carro: ");
                         vehicle.setCarPlate(scn.nextLine());
+                        
                         System.out.print("\n.Modelo do carro: ");
                         vehicle.setModel(scn.nextLine());
+                        
                         System.out.print("\n.Ano de fabricação: ");
                         vehicle.setYearProduction(scn.nextInt());
                         scn.nextLine(); //Limpando o buffer
+                        
                         System.out.print("\n.Nome do condutor: ");
                         driver.setName(scn.nextLine());
+                        
                         System.out.print("\n.Cpf do condutor(apenas digitos): ");
                         driver.setCpf(scn.nextLine());
                         vehicle.setDriver(driver);
+                        
+                        //Atualizando de acordo com protocolo do servidor
                         server.update(vehicle);
                         }
                         else{
@@ -162,6 +184,7 @@ public class Menu {
                     System.out.println("======Remoção de veiculo======");
                     System.out.print(".Renavam(Chave de busca): ");
                     vehicle.setRenavam(scn.nextLine());
+                    
                     server.remove(vehicle);
                 } catch (Exception e) {
                     e.printStackTrace();

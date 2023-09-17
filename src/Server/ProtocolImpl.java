@@ -32,8 +32,10 @@ public class ProtocolImpl extends UnicastRemoteObject implements Protocol {
 
             while (scanner.hasNextLine() && linesRead < linesToRead) {
                 String line = scanner.nextLine();
+                //Separando string por separador
                 String[] strings = line.split("\\|");
                 
+                //Instanciando veículo a partir das string
                 if (strings.length == 6) {
                     String carPlate = strings[0];
                     String renavam = strings[1];
@@ -103,6 +105,7 @@ public class ProtocolImpl extends UnicastRemoteObject implements Protocol {
     @Override
     public Vehicle searchByPlate(String plate) {
         try {
+            //Mais lento, utilizo lista pois a minha ordenação é baseada no renavam
             List<Vehicle> list = this.tree.getAllData();
             Vehicle vehicle = null;
             for(int i = 0; i < list.size(); i++){
@@ -122,9 +125,11 @@ public class ProtocolImpl extends UnicastRemoteObject implements Protocol {
     @Override
     public void update(Vehicle newVehicle) {
         try {
+            // Garantindo que veículo existe
             if(this.tree.search(newVehicle) ==  null){
                 throw new Exception("Nenhum veiculo encontrado com o renavam [" + newVehicle.getRenavam()+ "]");
             } else{
+                //Gambiarra? eu acho que não.
                 remove(newVehicle);
                 insert(newVehicle);
             }

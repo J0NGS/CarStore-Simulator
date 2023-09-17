@@ -105,6 +105,7 @@ public class AVLTree <T extends Comparable> {
             node.setRight(insert(data, node.getRight()));
         else 
             return node;
+        
         updateHeight(node);
         return balanced(node);
     }
@@ -126,6 +127,7 @@ public class AVLTree <T extends Comparable> {
             } else if (node.getRight() == null) {
                 return node.getLeft();
             }
+            
             // se o nó tiver sucessores dos dois lados
             node.setData(max(node.getLeft()));
             node.setLeft(remove(node.getData(), node.getLeft()));
@@ -179,13 +181,13 @@ public class AVLTree <T extends Comparable> {
     }
 
 
-    // função para encontrar elemento na arvore pela placa do carro
+    // função para encontrar elemento na arvore pela Renavam do carro
     private T search(Node<T> node, T data) {
         if (node == null) {
             System.out.println("Nenhum dado encontrado");
             return null;  // Elemento não encontrado
         }
-    
+        
         int compareResult = data.compareTo(node.getData());
     
         if (compareResult == 0) {
@@ -196,6 +198,7 @@ public class AVLTree <T extends Comparable> {
             return search(node.getRight(), data);  // Busca na subárvore direita
         }
     }
+    
     // para encontrar o node minimo
     private T min(Node<T> node){
         /**
@@ -291,16 +294,18 @@ public class AVLTree <T extends Comparable> {
         Node<T> rightNode = node.getRight();
         Node<T> leftNode = rightNode.getLeft();
         
-        //Definindo nó esquerdo do nó direito filho como o nó original
+        
         rightNode.setLeft(node);
-        //definindo o nó direito do filho como o nó esquerto
         node.setRight(leftNode);
         
         //atualizando alturas
         updateHeight(node);
         updateHeight(rightNode);
 
+        //Mensagem de log
         System.out.println("Rotação simples a esquerda");
+
+        //Retorna nova raiz da subarvore
         return rightNode;
     }
 
@@ -308,13 +313,21 @@ public class AVLTree <T extends Comparable> {
     private Node<T> simpleRight(Node<T> node) {
         //Função segue o mesmo modelo da rotação a esquerda
         Node<T> leftNode = node.getLeft();
+        // Armazena o nó à direita do nó esquerdo, que será anexado à subárvore direita do nó atual após a rotação.
         Node<T> rightNode = leftNode.getRight();
+        
+        //Rotação
         leftNode.setRight(node);
         node.setLeft(rightNode);
+        
+        //Atualiza as alturas dos nós
         updateHeight(node);
         updateHeight(leftNode);
 
+        //Mensagem para log
         System.out.println("Rotação simples a direita");
+        
+        //Retorna nova raiz da subarvore
         return leftNode;
     }
 }

@@ -30,10 +30,10 @@ public class Vehicle implements Comparable<Vehicle>, Serializable{
     }
 
     public Vehicle(String renavam) {
-        this.carPlate = null;
+        this.carPlate = "";
         this.renavam = renavam;
         this.driver = null;
-        this.model = null;
+        this.model = "";
         this.yearProduction = 0;
     }
 
@@ -66,7 +66,7 @@ public class Vehicle implements Comparable<Vehicle>, Serializable{
 
     public void setRenavam(String renavam) {
         try {
-            if(renavam.length()!= 11)
+            if(renavam.length() != 11)
                 throw new Exception("Renavam não possui os 11 digitos necessários");
             if(!renavam.matches("\\d+"))
                 throw new Exception("Renavam inválido, Renavam só pode conter números");
