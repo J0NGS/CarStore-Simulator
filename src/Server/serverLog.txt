@@ -1,199 +1,104 @@
 started...
 Waiting for requests...
-Add...
-Renavam[12345678901]
-Altura da arvore[0]
-Add...
-Renavam[98765432102]
-Altura da arvore[1]
-RotaÃ§Ã£o simples a direita
-RotaÃ§Ã£o simples a esquerda
-Add...
-Renavam[65432198703]
-Altura da arvore[1]
-Add...
-Renavam[32165465404]
-Altura da arvore[2]
-RotaÃ§Ã£o simples a esquerda
-Add...
-Renavam[45612312305]
-Altura da arvore[2]
-Add...
-Renavam[78945698706]
-Altura da arvore[2]
-RotaÃ§Ã£o simples a esquerda
-RotaÃ§Ã£o simples a direita
-Add...
-Renavam[98712332107]
-Altura da arvore[2]
-Add...
-Renavam[12378965408]
-Altura da arvore[3]
-Add...
-Renavam[45698712309]
-Altura da arvore[3]
-Add...
-Renavam[78932145610]
-Altura da arvore[3]
-RotaÃ§Ã£o simples a esquerda
-Add...
-Renavam[12378978911]
-Altura da arvore[3]
-Add...
-Renavam[98732165412]
-Altura da arvore[3]
-RotaÃ§Ã£o simples a direita
-Add...
-Renavam[65498732113]
-Altura da arvore[3]
-Add...
-Renavam[32165465414]
-Altura da arvore[3]
-Add...
-Renavam[45612312315]
-Altura da arvore[4]
-Add...
-Renavam[78945698716]
-Altura da arvore[4]
-RotaÃ§Ã£o simples a direita
-Add...
-Renavam[98712332117]
-Altura da arvore[4]
-Add...
-Renavam[12378965418]
-Altura da arvore[4]
-Add...
-Renavam[45698712319]
-Altura da arvore[4]
-Add...
-Renavam[78932145620]
-Altura da arvore[4]
-Add...
-Renavam[12378978921]
-Altura da arvore[4]
-Add...
-Renavam[98732165422]
-Altura da arvore[4]
-Add...
-Renavam[65498732123]
-Altura da arvore[4]
-Add...
-Renavam[32165465424]
-Altura da arvore[4]
-Add...
-Renavam[45612312325]
-Altura da arvore[5]
-Add...
-Renavam[78945698726]
-Altura da arvore[5]
-Add...
-Renavam[98712332127]
-Altura da arvore[5]
-RotaÃ§Ã£o simples a direita
-RotaÃ§Ã£o simples a esquerda
-Add...
-Renavam[12378965428]
-Altura da arvore[5]
-Add...
-Renavam[45698712329]
-Altura da arvore[5]
-Add...
-Renavam[78932145630]
-Altura da arvore[5]
-Add...
-Renavam[12378978931]
-Altura da arvore[5]
-RotaÃ§Ã£o simples a esquerda
-RotaÃ§Ã£o simples a direita
-Add...
-Renavam[98732165432]
-Altura da arvore[5]
-RotaÃ§Ã£o simples a esquerda
-Add...
-Renavam[65498732133]
-Altura da arvore[5]
-RotaÃ§Ã£o simples a esquerda
-Add...
-Renavam[32165465434]
-Altura da arvore[5]
-RotaÃ§Ã£o simples a esquerda
-Add...
-Renavam[45698712335]
-Altura da arvore[5]
-RotaÃ§Ã£o simples a esquerda
-Add...
-Renavam[78932145636]
-Altura da arvore[5]
-RotaÃ§Ã£o simples a esquerda
-Add...
-Renavam[12378978937]
-Altura da arvore[5]
-Add...
-Renavam[98732165438]
-Altura da arvore[5]
-Add...
-Renavam[65498732139]
-Altura da arvore[5]
-Add...
-Renavam[32165465440]
-Altura da arvore[5]
-RotaÃ§Ã£o simples a esquerda
-Add...
-Renavam[45612312341]
-Altura da arvore[5]
-RotaÃ§Ã£o simples a esquerda
-Add...
-Renavam[78945698742]
-Altura da arvore[5]
-RotaÃ§Ã£o simples a esquerda
-Add...
-Renavam[98712332143]
-Altura da arvore[5]
-Add...
-Renavam[12378965444]
-Altura da arvore[5]
-Add...
-Renavam[45698712345]
-Altura da arvore[6]
-Add...
-Renavam[78932145646]
-Altura da arvore[6]
-RotaÃ§Ã£o simples a esquerda
-Add...
-Renavam[12378978947]
-Altura da arvore[6]
-RotaÃ§Ã£o simples a esquerda
-RotaÃ§Ã£o simples a direita
-Add...
-Renavam[98732165448]
-Altura da arvore[6]
-RotaÃ§Ã£o simples a esquerda
-Add...
-Renavam[65498732149]
-Altura da arvore[6]
-RotaÃ§Ã£o simples a esquerda
-Add...
-Renavam[32165465450]
-Altura da arvore[6]
-RotaÃ§Ã£o simples a esquerda
-RotaÃ§Ã£o simples a direita
-Add...
-Renavam[12345678999]
-Altura da arvore[6]
-RotaÃ§Ã£o simples a esquerda
-Add...
-Renavam[99999999999]
-Altura da arvore[6]
-removed...
-Renavam[99999999999]
-Altura da arvore[6]
-Add...
-Renavam[99999999999]
-Altura da arvore[6]
-removed...
-Renavam[99999999999]
-Altura da arvore[6]
-RotaÃ§Ã£o simples a direita
-removed...
-Renavam[98765432102]
-Altura da arvore[6]
+Veículo [{ carPlate='ABC1D23', renavam='12345678901', driver='JoÃ£o da Silva', model='Corsa', yearProduction='2022'}] Inserido
+Fator de carga ->0.009900990099009901
+Veículo [{ carPlate='DEF4G56', renavam='98765432102', driver='Maria Oliveira', model='HB20', yearProduction='2019'}] Inserido
+Fator de carga ->0.019801980198019802
+Veículo [{ carPlate='GHI7J89', renavam='65432198703', driver='Carlos Souza', model='Celta', yearProduction='2020'}] Inserido
+Fator de carga ->0.0297029702970297
+Veículo [{ carPlate='JKL0M12', renavam='32165465404', driver='Ana Santos', model='Fox', yearProduction='2021'}] Inserido
+Fator de carga ->0.039603960396039604
+Veículo [{ carPlate='MNO3P45', renavam='45612312305', driver='Pedro Pereira', model='Saveiro', yearProduction='2018'}] Inserido
+Fator de carga ->0.04950495049504951
+Veículo [{ carPlate='PQR6S78', renavam='78945698706', driver='Laura Fernandes', model='Jetta', yearProduction='2022'}] Inserido
+Fator de carga ->0.0594059405940594
+Veículo [{ carPlate='STU9V01', renavam='98712332107', driver='Fernando Lima', model='Golf', yearProduction='2017'}] Inserido
+Fator de carga ->0.06930693069306931
+Veículo [{ carPlate='VWX2Y34', renavam='12378965408', driver='Mariana Costa', model='Sandero', yearProduction='2023'}] Inserido
+Fator de carga ->0.07920792079207921
+Veículo [{ carPlate='YZA5B67', renavam='45698712309', driver='Rafaela Mendes', model='Logan', yearProduction='2020'}] Inserido
+Fator de carga ->0.0891089108910891
+Veículo [{ carPlate='BCD8E90', renavam='78932145610', driver='Gustavo Alves', model='Compass', yearProduction='2019'}] Inserido
+Fator de carga ->0.09900990099009901
+Veículo [{ carPlate='EFG1H23', renavam='12378978911', driver='Carolina Oliveira', model='Renegade', yearProduction='2022'}] Inserido
+Fator de carga ->0.10891089108910891
+Veículo [{ carPlate='HIJ4K56', renavam='98732165412', driver='Alexandre Santos', model='i30', yearProduction='2017'}] Inserido
+Fator de carga ->0.1188118811881188
+Veículo [{ carPlate='KLM7N89', renavam='65498732113', driver='Beatriz Rodrigues', model='Creta', yearProduction='2023'}] Inserido
+Fator de carga ->0.12871287128712872
+Veículo [{ carPlate='NOP0Q12', renavam='32165465414', driver='Lucas Fernandes', model='Yaris', yearProduction='2020'}] Inserido
+Fator de carga ->0.13861386138613863
+Veículo [{ carPlate='QRS3T45', renavam='45612312315', driver='Leticia Silva', model='Hilux', yearProduction='2019'}] Inserido
+Fator de carga ->0.1485148514851485
+Veículo [{ carPlate='TUV6V78', renavam='78945698716', driver='Eduardo Pereira', model='Etios', yearProduction='2022'}] Inserido
+Fator de carga ->0.15841584158415842
+Veículo [{ carPlate='WXY9X01', renavam='98712332117', driver='Amanda Costa', model='March', yearProduction='2017'}] Inserido
+Fator de carga ->0.16831683168316833
+Veículo [{ carPlate='ZAB2Y34', renavam='12378965418', driver='Pedro Alves', model='Sentra', yearProduction='2023'}] Inserido
+Fator de carga ->0.1782178217821782
+Veículo [{ carPlate='CDE5B67', renavam='45698712319', driver='Isabela Mendes', model='Gol', yearProduction='2020'}] Inserido
+Fator de carga ->0.18811881188118812
+Veículo [{ carPlate='FGH8E90', renavam='78932145620', driver='Gabriel Lima', model='Polo', yearProduction='2019'}] Inserido
+Fator de carga ->0.19801980198019803
+Veículo [{ carPlate='IJK1H23', renavam='12378978921', driver='Sophia Oliveira', model='Argus', yearProduction='2022'}] Inserido
+Fator de carga ->0.2079207920792079
+Veículo [{ carPlate='LMN4K56', renavam='98732165422', driver='Enzo Santos', model='Corolla', yearProduction='2017'}] Inserido
+Fator de carga ->0.21782178217821782
+Veículo [{ carPlate='OPQ7N89', renavam='65498732123', driver='Lara Silva', model='Civic', yearProduction='2023'}] Inserido
+Fator de carga ->0.22772277227722773
+Veículo [{ carPlate='RST0Q12', renavam='32165465424', driver='Mateus Fernandes', model='City', yearProduction='2020'}] Inserido
+Fator de carga ->0.2376237623762376
+Veículo [{ carPlate='UVW3T45', renavam='45612312325', driver='Laura Costa', model='Fit', yearProduction='2019'}] Inserido
+Fator de carga ->0.24752475247524752
+Veículo [{ carPlate='XYZ6V78', renavam='78945698726', driver='Davi Alves', model='Logan', yearProduction='2022'}] Inserido
+Fator de carga ->0.25742574257425743
+Veículo [{ carPlate='ABC9X01', renavam='98712332127', driver='Livia Mendes', model='500', yearProduction='2017'}] Inserido
+Fator de carga ->0.26732673267326734
+Veículo [{ carPlate='DEF2Y34', renavam='12378965428', driver='Leonardo Lima', model='Amarok', yearProduction='2023'}] Inserido
+Fator de carga ->0.27722772277227725
+Veículo [{ carPlate='GHI5B67', renavam='45698712329', driver='Valentina Rodrigues', model='L200', yearProduction='2020'}] Inserido
+Fator de carga ->0.2871287128712871
+Veículo [{ carPlate='JKL8E90', renavam='78932145630', driver='Bruno Fernandes', model='Yaris', yearProduction='2019'}] Inserido
+Fator de carga ->0.297029702970297
+Veículo [{ carPlate='MNO1H23', renavam='12378978931', driver='Giovanna Oliveira', model='Corolla', yearProduction='2022'}] Inserido
+Fator de carga ->0.3069306930693069
+Veículo [{ carPlate='PQR4K56', renavam='98732165432', driver='Rafael Santos', model='Hilux', yearProduction='2017'}] Inserido
+Fator de carga ->0.31683168316831684
+Veículo [{ carPlate='STU7N89', renavam='65498732133', driver='Isabel Silva', model='Corolla', yearProduction='2023'}] Inserido
+Fator de carga ->0.32673267326732675
+Veículo [{ carPlate='VWX0Q12', renavam='32165465434', driver='Vinicius Costa', model='Jimmy', yearProduction='2020'}] Inserido
+Fator de carga ->0.33663366336633666
+Veículo [{ carPlate='YZA3T45', renavam='45698712335', driver='Cecilia Mendes', model='Eclipse', yearProduction='2019'}] Inserido
+Fator de carga ->0.3465346534653465
+Veículo [{ carPlate='BCD6V78', renavam='78932145636', driver='Lucas Lima', model='Veloster', yearProduction='2022'}] Inserido
+Fator de carga ->0.3564356435643564
+Veículo [{ carPlate='EFG9X01', renavam='12378978937', driver='Larissa Oliveira', model='Lancer', yearProduction='2017'}] Inserido
+Fator de carga ->0.36633663366336633
+Veículo [{ carPlate='HIJ2Y34', renavam='98732165438', driver='Matheus Santos', model='Couper', yearProduction='2023'}] Inserido
+Fator de carga ->0.37623762376237624
+Veículo [{ carPlate='KLM5B67', renavam='65498732139', driver='Helena Silva', model='Compass', yearProduction='2020'}] Inserido
+Fator de carga ->0.38613861386138615
+Veículo [{ carPlate='NOP8E90', renavam='32165465440', driver='Arthur Fernandes', model='Spin', yearProduction='2019'}] Inserido
+Fator de carga ->0.39603960396039606
+Veículo [{ carPlate='QRS1H23', renavam='45612312341', driver='Julia Costa', model='Cobalt', yearProduction='2022'}] Inserido
+Fator de carga ->0.40594059405940597
+Veículo [{ carPlate='TUV4K56', renavam='78945698742', driver='Ricardo Alves', model='Agile', yearProduction='2017'}] Inserido
+Fator de carga ->0.4158415841584158
+Veículo [{ carPlate='WXY7N89', renavam='98712332143', driver='Manuela Mendes', model='Vectra', yearProduction='2023'}] Inserido
+Fator de carga ->0.42574257425742573
+Veículo [{ carPlate='ZAB0Q12', renavam='12378965444', driver='Enzo Lima', model='Corolla', yearProduction='2020'}] Inserido
+Fator de carga ->0.43564356435643564
+Veículo [{ carPlate='CDE3T45', renavam='45698712345', driver='Maria Rodrigues', model='Gol', yearProduction='2019'}] Inserido
+Fator de carga ->0.44554455445544555
+Veículo [{ carPlate='FGH6V78', renavam='78932145646', driver='Sophia Fernandes', model='Gol', yearProduction='2022'}] Inserido
+Fator de carga ->0.45544554455445546
+Veículo [{ carPlate='IJK9X01', renavam='12378978947', driver='Gabriel Oliveira', model='Montana', yearProduction='2017'}] Inserido
+Fator de carga ->0.46534653465346537
+Veículo [{ carPlate='LMN2Y34', renavam='98732165448', driver='Isabella Santos', model='Saveiro', yearProduction='2023'}] Inserido
+Fator de carga ->0.4752475247524752
+Veículo [{ carPlate='OPQ5B67', renavam='65498732149', driver='Lucas Silva', model='Strada', yearProduction='2020'}] Inserido
+Fator de carga ->0.48514851485148514
+Veículo [{ carPlate='RST8E90', renavam='32165465450', driver='Lara Costa', model='Siena', yearProduction='2019'}] Inserido
+Fator de carga ->0.49504950495049505
+Veículo [{ carPlate='XYZ8K94', renavam='12345678900', driver='Pedro Galdino', model='Logan', yearProduction='2015'}] Inserido
+Fator de carga ->0.504950495049505

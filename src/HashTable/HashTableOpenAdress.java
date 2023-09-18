@@ -1,6 +1,7 @@
 package src.HashTable;
 
 import java.lang.reflect.Field;
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -78,6 +79,19 @@ public class HashTableOpenAdress<K, V> implements HashTable<K, V> {
 
         return (double) totalNodes / TABLE_SIZE;
     }
+    
+    @Override
+    public Integer getSize() {
+        int totalNodes = 0;
+        for (Node<K, V> node : table) {
+            if (node != null) {
+                totalNodes++;
+            }
+        }
+
+        return totalNodes;
+    }
+
 
     private int calculateIndex(K key) {
         int hashCode = key.hashCode();
@@ -101,6 +115,15 @@ public class HashTableOpenAdress<K, V> implements HashTable<K, V> {
     
         // Se não encontrar, retorna null
         return null;
+    }
+
+    @Override
+    public List<Node<K,V>> getAllNodes(){
+        List<Node<K,V>> nodes = new ArrayList<>();
+        for(Node<K, V> node:table){
+            nodes.add(node);
+        }
+        return nodes;
     }
     
     // Método auxiliar para obter o valor de um atributo de um objeto

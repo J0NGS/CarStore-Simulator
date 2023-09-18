@@ -6,11 +6,13 @@ import java.io.PrintStream;
 import java.rmi.Naming;
 import java.rmi.registry.LocateRegistry;
 
+import src.Server.ProtocolHashTable.HashTableType;
+
 public class Server {
     public static void main(String[] args) throws IOException {
         try {
             //Protocolo implementado
-            Protocol protocol = new ProtocolAVL();
+            Protocol protocol = new ProtocolHashTable(HashTableType.EXTERNAL_CHAINING);
             //Endereço
             String name = "rmi://localhost/BDVehicle";
             
@@ -22,7 +24,7 @@ public class Server {
             System.out.println("Waiting for requests...");
 			
             // Criando um arquivo para redirecionar a saída
-            File logFile = new File("E:/Documentos/GitHub/joao-goncalo-pratica-off-1-main/src/Server/serverLog.txt");
+            File logFile = new File("E:/Documentos/Projetos/joao-goncalo-pratica-off-1-main/src/Server/serverLog.txt");
             PrintStream printStream = new PrintStream(new FileOutputStream(logFile));
             
             // Redirecionando a saída padrão

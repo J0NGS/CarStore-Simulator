@@ -1,6 +1,7 @@
 package src.HashTable;
 
 import java.lang.reflect.Field;
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -104,6 +105,16 @@ public class HashTableExtChaining<K, V> implements HashTable<K, V>{
         return (double) totalNodes / TABLE_SIZE;
     }
 
+    @Override
+    public Integer getSize() {
+        int totalNodes = 0;
+        for (LinkedList<Node<K, V>> list : table) {
+            totalNodes += list.size();
+        }
+
+        return totalNodes;
+    }
+
     // Função de dispersão simples para calcular o índice da tabela hash
     private int calculateIndex(K key) {
         int hashCode = key.hashCode();
@@ -127,6 +138,17 @@ public class HashTableExtChaining<K, V> implements HashTable<K, V>{
     
         // Se não encontrar, retorna null
         return null;
+    }
+
+    @Override
+    public List<Node<K, V>> getAllNodes(){
+        List<Node<K, V>> nodes = new ArrayList<>();
+        for(LinkedList<Node<K, V>> list : table){
+            for(Node<K, V> node : list){
+                nodes.add(node);
+            }
+        }
+        return nodes;
     }
     
     // Método auxiliar para obter o valor de um atributo de um objeto

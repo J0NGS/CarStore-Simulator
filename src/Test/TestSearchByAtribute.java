@@ -29,7 +29,7 @@ public class TestSearchByAtribute {
         openAddressTable.insert(3, new Car("Ford", "Fusion"));
 
         searchValue = "Accord";
-        Node<Integer, Car> foundNode2 = openAddressTable.searchByValueAttribute(searchValue, attributeName);
+        Node<Integer, Car> foundNode2 = openAddressTable.searchByAttribute(searchValue, attributeName);
 
         if (foundNode2 != null) {
             System.out.println("Found car with " + attributeName + " " + searchValue + ": " + foundNode2.getValue());
