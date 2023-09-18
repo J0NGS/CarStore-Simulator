@@ -3,8 +3,6 @@ package src.AVL;
 import java.util.ArrayList;
 import java.util.List;
 
-import src.AVL.Node;
-
 /**
  * Classe que representar uma arvore AVL
  * @author João Gonçalo
