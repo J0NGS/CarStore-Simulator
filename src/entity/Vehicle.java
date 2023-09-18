@@ -128,5 +128,16 @@ public class Vehicle implements Comparable<Vehicle>, Serializable{
     
 
 
+    @Override
+    public String toString() {
+        return "{" +
+            " carPlate='" + getCarPlate() + "'" +
+            ", renavam='" + getRenavam() + "'" +
+            ", driver='" + getDriver().getName() + "'" +
+            ", model='" + getModel() + "'" +
+            ", yearProduction='" + getYearProduction() + "'" +
+            "}";
+    }
+
 
 }

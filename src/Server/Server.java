@@ -10,7 +10,7 @@ public class Server {
     public static void main(String[] args) throws IOException {
         try {
             //Protocolo implementado
-            Protocol protocol = new ProtocolImpl();
+            Protocol protocol = new ProtocolAVL();
             //Endereço
             String name = "rmi://localhost/BDVehicle";
             

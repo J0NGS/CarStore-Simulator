@@ -13,11 +13,11 @@ import src.entity.Driver;
 import src.entity.Vehicle;
 
 
-public class ProtocolImpl extends UnicastRemoteObject implements Protocol {
+public class ProtocolAVL extends UnicastRemoteObject implements Protocol {
     private AVLTree <Vehicle> tree;
     
 
-    public ProtocolImpl() throws RemoteException {
+    public ProtocolAVL() throws RemoteException {
         this.tree = new AVLTree<>();
     }
 

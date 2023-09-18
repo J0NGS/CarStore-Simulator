@@ -1,5 +1,6 @@
 package src.HashTable;
 
+import java.lang.reflect.Field;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -82,4 +83,38 @@ public class HashTableOpenAdress<K, V> implements HashTable<K, V> {
         int hashCode = key.hashCode();
         return Math.abs(hashCode) % TABLE_SIZE;
     }
+
+    @Override
+    public Node<K, V> searchByAttribute(Object value, String attributeName) {
+        // Percorre a tabela hash
+        for (Node<K, V> node : table) {
+            if (node != null) {
+                // Obtem o valor do atributo do Value (assumindo que o Value é uma classe com esse atributo)
+                Object attributeValue = getAttributeValue(node.getValue(), attributeName);
+    
+                // Verifica se o atributo corresponde ao valor desejado
+                if (attributeValue != null && attributeValue.equals(value)) {
+                    return node;
+                }
+            }
+        }
+    
+        // Se não encontrar, retorna null
+        return null;
+    }
+    
+    // Método auxiliar para obter o valor de um atributo de um objeto
+    private Object getAttributeValue(V value, String attributeName) {
+        try {
+            // Usa reflexão para obter o valor do atributo
+            Field field = value.getClass().getDeclaredField(attributeName);
+            field.setAccessible(true);
+            return field.get(value);
+        } catch (NoSuchFieldException | IllegalAccessException e) {
+            // Trate exceções, se necessário
+            e.printStackTrace();
+            return null;
+        }
+    }
+    
 }
