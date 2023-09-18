@@ -32,7 +32,13 @@ public class Driver implements Serializable{
     }
 
     public void setName(String name) {
-        this.name = name;
+        try {
+            if(name.isBlank() || name.isEmpty())
+                throw new Exception("nome não pode ser vázio");
+            this.name = name;
+        } catch (Exception e) {
+            // TODO: handle exception
+        }
     }
 
     public String getCpf() {

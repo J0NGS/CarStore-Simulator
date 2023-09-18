@@ -67,8 +67,9 @@ public class Menu {
                     vehicle.setModel(scn.nextLine());
                     
                     System.out.print("\n.Ano de fabricação: ");
-                    vehicle.setYearProduction(scn.nextInt());
-                    scn.nextLine(); //Limpando o buffer
+                    String yearString = scn.nextLine(); 
+                    vehicle.setYearProduction(Integer.parseInt(yearString));
+                    //Limpando o buffer
                     
                     System.out.print("\n.Nome do condutor: ");
                     driver.setName(scn.nextLine());
@@ -80,6 +81,8 @@ public class Menu {
                     //Inserindo de acordo com protocolo do servidor
                     server.insert(vehicle);
                 } catch (RemoteException e) {
+                    e.printStackTrace();
+                } catch(NumberFormatException e){
                     e.printStackTrace();
                 }
                 break;

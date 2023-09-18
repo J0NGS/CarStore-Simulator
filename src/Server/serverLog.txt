@@ -100,5 +100,3 @@ Veículo [{ carPlate='OPQ5B67', renavam='65498732149', driver='Lucas Silva', mode
 Fator de carga ->0.48514851485148514
 Veículo [{ carPlate='RST8E90', renavam='32165465450', driver='Lara Costa', model='Siena', yearProduction='2019'}] Inserido
 Fator de carga ->0.49504950495049505
-Veículo [{ carPlate='XYZ8K94', renavam='12345678900', driver='Pedro Galdino', model='Logan', yearProduction='2015'}] Inserido
-Fator de carga ->0.504950495049505
