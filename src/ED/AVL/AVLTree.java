@@ -1,4 +1,4 @@
-package src.AVL;
+package src.ED.AVL;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,8 +1,8 @@
 package src.Test;
 
-import src.HashTable.HashTableExtChaining;
-import src.HashTable.HashTableOpenAdress;
-import src.HashTable.Node;
+import src.ED.HashTable.HashTableExtChaining;
+import src.ED.HashTable.HashTableOpenAdress;
+import src.ED.HashTable.Node;
 
 public class TestSearchByAtribute { 
     public static void main(String[] args) {

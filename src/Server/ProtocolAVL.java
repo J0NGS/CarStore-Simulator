@@ -8,7 +8,7 @@ import java.rmi.server.UnicastRemoteObject;
 import java.util.List;
 import java.util.Scanner;
 
-import src.AVL.AVLTree;
+import src.ED.AVL.AVLTree;
 import src.entity.Driver;
 import src.entity.Vehicle;
 

@@ -1,5 +1,5 @@
 package src.Test;
-import src.HashTable.HashTableExtChaining;
+import src.ED.HashTable.HashTableExtChaining;
 
 public class HashTableExtChainingTest {
     public static void main(String[] args) {

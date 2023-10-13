@@ -1,6 +1,6 @@
 package src.Test;
 
-import src.HashTable.HashTableOpenAdress;
+import src.ED.HashTable.HashTableOpenAdress;
 
 public class HashTableOpenAdressTest {
     public static void main(String[] args) {

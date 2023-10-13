@@ -1,11 +1,13 @@
 package src.Test;
 
+import java.rmi.RemoteException;
+
 import src.Server.ProtocolHashTable;
 import src.entity.Vehicle;
 import src.entity.Driver;
 
 public class ProtocolHashTableTest {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws RemoteException {
         // Create a ProtocolHashTable instance using External Chaining
         ProtocolHashTable externalChainingHashTable = new ProtocolHashTable(ProtocolHashTable.HashTableType.EXTERNAL_CHAINING);
 

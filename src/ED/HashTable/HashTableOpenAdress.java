@@ -1,4 +1,4 @@
-package src.HashTable;
+package src.ED.HashTable;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;

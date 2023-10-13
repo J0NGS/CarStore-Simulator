@@ -1,4 +1,4 @@
-package src.AVL;
+package src.ED.AVL;
 /**
  * Classe para representar um no de uma Arvore AVL
  * @author João Gonçalo
