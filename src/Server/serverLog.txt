@@ -1,0 +1,270 @@
+started...
+Waiting for requests...
+Veículo [{ carPlate='PQR6S78', renavam='78945698706', name='Laura Fernandes', cpf='32178965406', model='Jetta', yearProduction='2022'}] Inserido
+Veículo [{ carPlate='JKL0M12', renavam='32165465404', name='Ana Santos', cpf='78912345604', model='Fox', yearProduction='2021'}] Inserido
+Veículo [{ carPlate='ABC1D23', renavam='12345678901', name='JoÃ£o da Silva', cpf='12345678901', model='Corsa', yearProduction='2022'}] Inserido
+Veículo [{ carPlate='DEF4G56', renavam='98765432102', name='Maria Oliveira', cpf='98765432102', model='HB20', yearProduction='2019'}] Inserido
+Veículo [{ carPlate='GHI7J89', renavam='65432198703', name='Carlos Souza', cpf='45678912303', model='Celta', yearProduction='2020'}] Inserido
+Veículo [{ carPlate='MNO3P45', renavam='45612312305', name='Pedro Pereira', cpf='65498732105', model='Saveiro', yearProduction='2018'}] Inserido
+Veículo [{ carPlate='STU9V01', renavam='98712332107', name='Fernando Lima', cpf='65412398707', model='Golf', yearProduction='2017'}] Inserido
+Veículo [{ carPlate='VWX2Y34', renavam='12378965408', name='Mariana Costa', cpf='98732165408', model='Sandero', yearProduction='2023'}] Inserido
+Veículo [{ carPlate='YZA5B67', renavam='45698712309', name='Rafaela Mendes', cpf='32165498709', model='Logan', yearProduction='2020'}] Inserido
+Veículo [{ carPlate='BCD8E90', renavam='78932145610', name='Gustavo Alves', cpf='12398765410', model='Compass', yearProduction='2019'}] Inserido
+Veículo [{ carPlate='EFG1H23', renavam='12378978911', name='Carolina Oliveira', cpf='98765432111', model='Renegade', yearProduction='2022'}] Inserido
+Veículo [{ carPlate='HIJ4K56', renavam='98732165412', name='Alexandre Santos', cpf='45678912312', model='i30', yearProduction='2017'}] Inserido
+Veículo [{ carPlate='KLM7N89', renavam='65498732113', name='Beatriz Rodrigues', cpf='78912345613', model='Creta', yearProduction='2023'}] Inserido
+Veículo [{ carPlate='NOP0Q12', renavam='32165465414', name='Lucas Fernandes', cpf='65498732114', model='Yaris', yearProduction='2020'}] Inserido
+Veículo [{ carPlate='QRS3T45', renavam='45612312315', name='Leticia Silva', cpf='32178965415', model='Hilux', yearProduction='2019'}] Inserido
+Veículo [{ carPlate='TUV6V78', renavam='78945698716', name='Eduardo Pereira', cpf='98732165416', model='Etios', yearProduction='2022'}] Inserido
+Veículo [{ carPlate='WXY9X01', renavam='98712332117', name='Amanda Costa', cpf='65412398717', model='March', yearProduction='2017'}] Inserido
+Veículo [{ carPlate='ZAB2Y34', renavam='12378965418', name='Pedro Alves', cpf='98732165418', model='Sentra', yearProduction='2023'}] Inserido
+Veículo [{ carPlate='CDE5B67', renavam='45698712319', name='Isabela Mendes', cpf='32165498719', model='Gol', yearProduction='2020'}] Inserido
+Veículo [{ carPlate='FGH8E90', renavam='78932145620', name='Gabriel Lima', cpf='12398765420', model='Polo', yearProduction='2019'}] Inserido
+Veículo [{ carPlate='IJK1H23', renavam='12378978921', name='Sophia Oliveira', cpf='98765432121', model='Argus', yearProduction='2022'}] Inserido
+Veículo [{ carPlate='LMN4K56', renavam='98732165422', name='Enzo Santos', cpf='45678912322', model='Corolla', yearProduction='2017'}] Inserido
+Veículo [{ carPlate='OPQ7N89', renavam='65498732123', name='Lara Silva', cpf='78912345623', model='Civic', yearProduction='2023'}] Inserido
+Veículo [{ carPlate='RST0Q12', renavam='32165465424', name='Mateus Fernandes', cpf='65498732124', model='City', yearProduction='2020'}] Inserido
+Veículo [{ carPlate='UVW3T45', renavam='45612312325', name='Laura Costa', cpf='32178965425', model='Fit', yearProduction='2019'}] Inserido
+Veículo [{ carPlate='XYZ6V78', renavam='78945698726', name='Davi Alves', cpf='98732165426', model='Logan', yearProduction='2022'}] Inserido
+Veículo [{ carPlate='ABC9X01', renavam='98712332127', name='Livia Mendes', cpf='65412398727', model='500', yearProduction='2017'}] Inserido
+Veículo [{ carPlate='DEF2Y34', renavam='12378965428', name='Leonardo Lima', cpf='98732165428', model='Amarok', yearProduction='2023'}] Inserido
+Veículo [{ carPlate='GHI5B67', renavam='45698712329', name='Valentina Rodrigues', cpf='32165498729', model='L200', yearProduction='2020'}] Inserido
+Veículo [{ carPlate='JKL8E90', renavam='78932145630', name='Bruno Fernandes', cpf='12398765430', model='Yaris', yearProduction='2019'}] Inserido
+Veículo [{ carPlate='MNO1H23', renavam='12378978931', name='Giovanna Oliveira', cpf='98765432131', model='Corolla', yearProduction='2022'}] Inserido
+Veículo [{ carPlate='PQR4K56', renavam='98732165432', name='Rafael Santos', cpf='45678912332', model='Hilux', yearProduction='2017'}] Inserido
+Veículo [{ carPlate='STU7N89', renavam='65498732133', name='Isabel Silva', cpf='78912345633', model='Corolla', yearProduction='2023'}] Inserido
+Veículo [{ carPlate='VWX0Q12', renavam='32165465434', name='Vinicius Costa', cpf='65498732134', model='Jimmy', yearProduction='2020'}] Inserido
+Veículo [{ carPlate='YZA3T45', renavam='45698712335', name='Cecilia Mendes', cpf='32165498735', model='Eclipse', yearProduction='2019'}] Inserido
+Veículo [{ carPlate='BCD6V78', renavam='78932145636', name='Lucas Lima', cpf='12398765436', model='Veloster', yearProduction='2022'}] Inserido
+Veículo [{ carPlate='EFG9X01', renavam='12378978937', name='Larissa Oliveira', cpf='98765432137', model='Lancer', yearProduction='2017'}] Inserido
+Veículo [{ carPlate='HIJ2Y34', renavam='98732165438', name='Matheus Santos', cpf='45678912338', model='Couper', yearProduction='2023'}] Inserido
+Veículo [{ carPlate='KLM5B67', renavam='65498732139', name='Helena Silva', cpf='78912345639', model='Compass', yearProduction='2020'}] Inserido
+Veículo [{ carPlate='NOP8E90', renavam='32165465440', name='Arthur Fernandes', cpf='65498732140', model='Spin', yearProduction='2019'}] Inserido
+Veículo [{ carPlate='QRS1H23', renavam='45612312341', name='Julia Costa', cpf='32178965441', model='Cobalt', yearProduction='2022'}] Inserido
+Veículo [{ carPlate='TUV4K56', renavam='78945698742', name='Ricardo Alves', cpf='98732165442', model='Agile', yearProduction='2017'}] Inserido
+Veículo [{ carPlate='WXY7N89', renavam='98712332143', name='Manuela Mendes', cpf='65412398743', model='Vectra', yearProduction='2023'}] Inserido
+Veículo [{ carPlate='ZAB0Q12', renavam='12378965444', name='Enzo Lima', cpf='98732165444', model='Corolla', yearProduction='2020'}] Inserido
+Veículo [{ carPlate='CDE3T45', renavam='45698712345', name='Maria Rodrigues', cpf='32165498745', model='Gol', yearProduction='2019'}] Inserido
+Veículo [{ carPlate='FGH6V78', renavam='78932145646', name='Sophia Fernandes', cpf='12398765446', model='Gol', yearProduction='2022'}] Inserido
+Veículo [{ carPlate='IJK9X01', renavam='12378978947', name='Gabriel Oliveira', cpf='98765432147', model='Montana', yearProduction='2017'}] Inserido
+Veículo [{ carPlate='LMN2Y34', renavam='98732165448', name='Isabella Santos', cpf='45678912348', model='Saveiro', yearProduction='2023'}] Inserido
+Veículo [{ carPlate='OPQ5B67', renavam='65498732149', name='Lucas Silva', cpf='78912345649', model='Strada', yearProduction='2020'}] Inserido
+Veículo [{ carPlate='RST8E90', renavam='32165465450', name='Lara Costa', cpf='65498732150', model='Siena', yearProduction='2019'}] Inserido
+Elemento encontrado com renavam [ 78945698716 ]
+Contador de  frequência do node [1 ]
+Elemento encontrado com renavam [ 45698712309 ]
+Contador de  frequência do node [1 ]
+Elemento encontrado com renavam [ 12378978937 ]
+Contador de  frequência do node [1 ]
+Elemento encontrado com renavam [ 45698712335 ]
+Contador de  frequência do node [1 ]
+Elemento encontrado com renavam [ 32165465440 ]
+Contador de  frequência do node [1 ]
+Elemento encontrado com renavam [ 65498732133 ]
+Contador de  frequência do node [1 ]
+Elemento encontrado com renavam [ 78932145620 ]
+Contador de  frequência do node [1 ]
+Elemento encontrado com renavam [ 45612312305 ]
+Contador de  frequência do node [1 ]
+Elemento encontrado com renavam [ 32165465414 ]
+Contador de  frequência do node [1 ]
+Elemento encontrado com renavam [ 98712332127 ]
+Contador de  frequência do node [1 ]
+Elemento encontrado com renavam [ 65498732139 ]
+Contador de  frequência do node [1 ]
+Elemento encontrado com renavam [ 12378965444 ]
+Contador de  frequência do node [1 ]
+Elemento encontrado com renavam [ 98732165448 ]
+Contador de  frequência do node [1 ]
+Elemento encontrado com renavam [ 98732165412 ]
+Contador de  frequência do node [1 ]
+Elemento encontrado com renavam [ 12378965418 ]
+Contador de  frequência do node [1 ]
+Elemento encontrado com renavam [ 12378978911 ]
+Contador de  frequência do node [1 ]
+Elemento encontrado com renavam [ 78945698726 ]
+Contador de  frequência do node [1 ]
+Elemento encontrado com renavam [ 12378978947 ]
+Contador de  frequência do node [1 ]
+Elemento encontrado com renavam [ 98765432102 ]
+Contador de  frequência do node [1 ]
+Elemento encontrado com renavam [ 45698712329 ]
+Contador de  frequência do node [1 ]
+Elemento encontrado com renavam [ 32165465450 ]
+Contador de  frequência do node [1 ]
+Elemento encontrado com renavam [ 78932145630 ]
+Contador de  frequência do node [1 ]
+Elemento encontrado com renavam [ 65498732113 ]
+Contador de  frequência do node [1 ]
+Elemento encontrado com renavam [ 32165465424 ]
+Contador de  frequência do node [1 ]
+Elemento encontrado com renavam [ 45612312325 ]
+Contador de  frequência do node [1 ]
+Elemento encontrado com renavam [ 98712332117 ]
+Contador de  frequência do node [1 ]
+Elemento encontrado com renavam [ 65498732149 ]
+Contador de  frequência do node [1 ]
+Elemento encontrado com renavam [ 78932145636 ]
+Contador de  frequência do node [1 ]
+Elemento encontrado com renavam [ 98732165438 ]
+Contador de  frequência do node [1 ]
+Elemento encontrado com renavam [ 98712332143 ]
+Contador de  frequência do node [1 ]
+Elemento encontrado com renavam [ 12378965428 ]
+Contador de  frequência do node [1 ]
+Elemento encontrado com renavam [ 98732165432 ]
+Contador de  frequência do node [1 ]
+Elemento encontrado com renavam [ 12378978921 ]
+Contador de  frequência do node [1 ]
+Elemento encontrado com renavam [ 78945698706 ]
+Contador de  frequência do node [1 ]
+Elemento encontrado com renavam [ 45698712319 ]
+Contador de  frequência do node [1 ]
+Elemento encontrado com renavam [ 65432198703 ]
+Contador de  frequência do node [1 ]
+Elemento encontrado com renavam [ 45698712345 ]
+Contador de  frequência do node [1 ]
+Elemento encontrado com renavam [ 65498732123 ]
+Contador de  frequência do node [1 ]
+Elemento encontrado com renavam [ 78932145610 ]
+Contador de  frequência do node [1 ]
+Elemento encontrado com renavam [ 32165465434 ]
+Contador de  frequência do node [1 ]
+Elemento encontrado com renavam [ 45612312315 ]
+Contador de  frequência do node [1 ]
+Elemento encontrado com renavam [ 32165465404 ]
+Contador de  frequência do node [1 ]
+Elemento encontrado com renavam [ 98712332107 ]
+Contador de  frequência do node [1 ]
+Elemento encontrado com renavam [ 78932145646 ]
+Contador de  frequência do node [1 ]
+Elemento encontrado com renavam [ 12345678901 ]
+Contador de  frequência do node [1 ]
+Elemento encontrado com renavam [ 45612312341 ]
+Contador de  frequência do node [1 ]
+Elemento encontrado com renavam [ 98732165422 ]
+Contador de  frequência do node [1 ]
+Elemento encontrado com renavam [ 12378965408 ]
+Contador de  frequência do node [1 ]
+Elemento encontrado com renavam [ 78945698742 ]
+Contador de  frequência do node [1 ]
+Elemento encontrado com renavam [ 12378978931 ]
+Contador de  frequência do node [1 ]
+Elemento encontrado com renavam [ 12378978947 ]
+Contador de  frequência do node [2 ]
+Elemento encontrado com placa [ JKL8E90 ]
+Contador de  frequência do node [1 ]
+Veículo [{ carPlate='OPP3L45', renavam='12345678900', name='Paulo', cpf='00099988878', model='Logan', yearProduction='2010'}] Inserido
+Fator de carga ->0.504950495049505
+Elemento encontrado com renavam [ 12345678900 ]
+Contador de  frequência do node [1 ]
+Elemento encontrado com renavam [ 12345678900 ]
+Contador de  frequência do node [2 ]
+Elemento encontrado com renavam [ 12345678900 ]
+Contador de  frequência do node [4 ]
+Elemento encontrado com renavam [ 32165465440 ]
+Contador de  frequência do node [2 ]
+Renavam[32165465440] Removido
+Fator de carga->0.49504950495049505
+Elemento encontrado com renavam [ 45612312325 ]
+Contador de  frequência do node [2 ]
+Renavam[45612312325] Removido
+Fator de carga->0.48514851485148514
+Elemento encontrado com renavam [ 78945698716 ]
+Contador de  frequência do node [2 ]
+Elemento encontrado com renavam [ 45698712309 ]
+Contador de  frequência do node [2 ]
+Elemento encontrado com renavam [ 12378978937 ]
+Contador de  frequência do node [2 ]
+Elemento encontrado com renavam [ 45698712335 ]
+Contador de  frequência do node [2 ]
+Elemento encontrado com renavam [ 65498732133 ]
+Contador de  frequência do node [2 ]
+Elemento encontrado com renavam [ 78932145620 ]
+Contador de  frequência do node [2 ]
+Elemento encontrado com renavam [ 45612312305 ]
+Contador de  frequência do node [2 ]
+Elemento encontrado com renavam [ 32165465414 ]
+Contador de  frequência do node [2 ]
+Elemento encontrado com renavam [ 98712332127 ]
+Contador de  frequência do node [2 ]
+Elemento encontrado com renavam [ 65498732139 ]
+Contador de  frequência do node [2 ]
+Elemento encontrado com renavam [ 12378965444 ]
+Contador de  frequência do node [2 ]
+Elemento encontrado com renavam [ 98732165448 ]
+Contador de  frequência do node [2 ]
+Elemento encontrado com renavam [ 98732165412 ]
+Contador de  frequência do node [2 ]
+Elemento encontrado com renavam [ 12378965418 ]
+Contador de  frequência do node [2 ]
+Elemento encontrado com renavam [ 12378978911 ]
+Contador de  frequência do node [2 ]
+Elemento encontrado com renavam [ 78945698726 ]
+Contador de  frequência do node [2 ]
+Elemento encontrado com renavam [ 12378978947 ]
+Contador de  frequência do node [3 ]
+Elemento encontrado com renavam [ 98765432102 ]
+Contador de  frequência do node [2 ]
+Elemento encontrado com renavam [ 45698712329 ]
+Contador de  frequência do node [2 ]
+Elemento encontrado com renavam [ 32165465450 ]
+Contador de  frequência do node [2 ]
+Elemento encontrado com renavam [ 78932145630 ]
+Contador de  frequência do node [2 ]
+Elemento encontrado com renavam [ 65498732113 ]
+Contador de  frequência do node [2 ]
+Elemento encontrado com renavam [ 32165465424 ]
+Contador de  frequência do node [2 ]
+Elemento encontrado com renavam [ 98712332117 ]
+Contador de  frequência do node [2 ]
+Elemento encontrado com renavam [ 65498732149 ]
+Contador de  frequência do node [2 ]
+Elemento encontrado com renavam [ 78932145636 ]
+Contador de  frequência do node [2 ]
+Elemento encontrado com renavam [ 98732165438 ]
+Contador de  frequência do node [2 ]
+Elemento encontrado com renavam [ 98712332143 ]
+Contador de  frequência do node [2 ]
+Elemento encontrado com renavam [ 12378965428 ]
+Contador de  frequência do node [2 ]
+Elemento encontrado com renavam [ 98732165432 ]
+Contador de  frequência do node [2 ]
+Elemento encontrado com renavam [ 12378978921 ]
+Contador de  frequência do node [2 ]
+Elemento encontrado com renavam [ 78945698706 ]
+Contador de  frequência do node [2 ]
+Elemento encontrado com renavam [ 45698712319 ]
+Contador de  frequência do node [2 ]
+Elemento encontrado com renavam [ 65432198703 ]
+Contador de  frequência do node [2 ]
+Elemento encontrado com renavam [ 45698712345 ]
+Contador de  frequência do node [2 ]
+Elemento encontrado com renavam [ 65498732123 ]
+Contador de  frequência do node [2 ]
+Elemento encontrado com renavam [ 78932145610 ]
+Contador de  frequência do node [2 ]
+Elemento encontrado com renavam [ 32165465434 ]
+Contador de  frequência do node [2 ]
+Elemento encontrado com renavam [ 45612312315 ]
+Contador de  frequência do node [2 ]
+Elemento encontrado com renavam [ 32165465404 ]
+Contador de  frequência do node [2 ]
+Elemento encontrado com renavam [ 98712332107 ]
+Contador de  frequência do node [2 ]
+Elemento encontrado com renavam [ 78932145646 ]
+Contador de  frequência do node [2 ]
+Elemento encontrado com renavam [ 12345678900 ]
+Contador de  frequência do node [5 ]
+Elemento encontrado com renavam [ 12345678901 ]
+Contador de  frequência do node [2 ]
+Elemento encontrado com renavam [ 45612312341 ]
+Contador de  frequência do node [2 ]
+Elemento encontrado com renavam [ 98732165422 ]
+Contador de  frequência do node [2 ]
+Elemento encontrado com renavam [ 12378965408 ]
+Contador de  frequência do node [2 ]
+Elemento encontrado com renavam [ 78945698742 ]
+Contador de  frequência do node [2 ]
+Elemento encontrado com renavam [ 12378978931 ]
+Contador de  frequência do node [2 ]

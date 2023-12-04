@@ -1,6 +1,9 @@
 package src.entity;
 import java.io.Serializable;
+import java.nio.charset.Charset;
 import java.util.Objects;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * classe para representar um veiculo
@@ -36,7 +39,6 @@ public class Vehicle implements Comparable<Vehicle>, Serializable{
         this.model = "";
         this.yearProduction = 0;
     }
-
 
     public Vehicle() {
     }
@@ -108,6 +110,7 @@ public class Vehicle implements Comparable<Vehicle>, Serializable{
         return Double.compare(renavam_1, renavam_2);
     }
 
+    
 
     // Equals & Hash
     @Override
@@ -126,18 +129,72 @@ public class Vehicle implements Comparable<Vehicle>, Serializable{
         return Objects.hash(carPlate, renavam, driver, model, yearProduction);
     }
     
+    public static Vehicle stringToVehicle(String input) {
+    String carPlate = "";
+    String renavam = "";
+    String driverName = "";
+    String driverCpf = "";
+    String model = "";
+    int yearProduction = 0;
 
+    // Utiliza Charset UTF-8 para garantir a codificação correta dos caracteres especiais
+    Charset utf8 = Charset.forName("UTF-8");
+    byte[] bytes = input.getBytes(utf8);
+    input = new String(bytes, utf8);
 
-    @Override
-    public String toString() {
-        return "{" +
-            " carPlate='" + getCarPlate() + "'" +
-            ", renavam='" + getRenavam() + "'" +
-            ", driver='" + getDriver().getName() + "'" +
-            ", model='" + getModel() + "'" +
-            ", yearProduction='" + getYearProduction() + "'" +
-            "}";
+    Pattern pattern = Pattern.compile("([a-zA-Z]+)='([^']+)'");
+    Matcher matcher = pattern.matcher(input);
+
+    while (matcher.find()) {
+        String attribute = matcher.group(1);
+        String value = matcher.group(2);
+
+        // Verifica se o atributo é "yearProduction"
+        if ("yearProduction".equals(attribute)) {
+            // Extrai todos os dígitos para obter o valor do ano
+            value = value.replaceAll("[^0-9]", "");
+            if (value.length() >= 4) {
+                value = value.substring(0, 4);
+            }
+        }
+
+        switch (attribute) {
+            case "carPlate":
+                carPlate = value;
+                break;
+            case "renavam":
+                renavam = value;
+                break;
+            case "name":
+                driverName = value;
+                break;
+            case "cpf":
+                driverCpf = value;
+                break;
+            case "model":
+                model = value;
+                break;
+            case "yearProduction":
+                yearProduction = Integer.parseInt(value);
+                break;
+        }
     }
 
+    Driver driver = new Driver(driverName, driverCpf);
 
+    return new Vehicle(carPlate, renavam, driver, model, yearProduction);
+    }
+    
+    
+    @Override
+    public String toString() {
+        return ("{" +
+            " carPlate='" + getCarPlate() + "'" +
+            ", renavam='" + getRenavam() + "'" +
+            ", name='" + getDriver().getName() + "'" +
+            ", cpf='" + getDriver().getCpf() + "'" +
+            ", model='" + getModel() + "'" +
+            ", yearProduction='" + getYearProduction() + "'" +
+            "}");
+    }
 }

@@ -21,7 +21,6 @@ public class Driver implements Serializable{
         this.cpf = cpf;
     }
 
-
     public Driver() {
     }
 
@@ -37,7 +36,7 @@ public class Driver implements Serializable{
                 throw new Exception("nome não pode ser vázio");
             this.name = name;
         } catch (Exception e) {
-            // TODO: handle exception
+            e.getMessage();
         }
     }
 
@@ -73,5 +72,16 @@ public class Driver implements Serializable{
     public int hashCode() {
         return Objects.hash(name, cpf);
     }
+
+
+    @Override
+    public String toString() {
+        return "{" +
+            " name='" + getName() + "'" +
+            ", cpf='" + getCpf() + "'" +
+            "}";
+    }
+
+    
     
 }

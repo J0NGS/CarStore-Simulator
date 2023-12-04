@@ -1,19 +1,19 @@
 package src.ED.HashTable;
 
+
+import src.ED.LinkedList.FrequencyLinkedList;
+import src.ED.LinkedList.Node;
 import java.lang.reflect.Field;
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
 
 public class HashTableExtChaining<K, V> implements HashTable<K, V>{
     private static final int TABLE_SIZE = 101; // Tamanho inicial da tabela, levando em consideração que são 50 carros(50*2 e procura primo mais proximo)
-    private LinkedList<Node<K, V>>[] table;
+    private FrequencyLinkedList<K, V>[] table;
 
     public HashTableExtChaining() {
         // inicializa a tabela hash com listas encadeadas vazias
-        table = new LinkedList[TABLE_SIZE];
+        table = new FrequencyLinkedList[TABLE_SIZE];
         for (int i = 0; i < TABLE_SIZE; i++) {
-            table[i] = new LinkedList<>();
+            table[i] = new FrequencyLinkedList<>();
         }
     }
 
@@ -23,7 +23,7 @@ public class HashTableExtChaining<K, V> implements HashTable<K, V>{
         int index = calculateIndex(key);
 
         // obtem a lista encadeada correspondente ao índice
-        LinkedList<Node<K, V>> list = table[index];
+        FrequencyLinkedList<K, V> list = table[index];
 
         // verifica se já existe um nó com a mesma chave na lista
         for (Node<K, V> node : list) {
@@ -35,7 +35,7 @@ public class HashTableExtChaining<K, V> implements HashTable<K, V>{
         }
 
         // caso contrário cria um novo no e adiciona a lista
-        list.add(new Node<>(key, value));
+        list.add(key, value);
     }
 
     @Override
@@ -44,7 +44,7 @@ public class HashTableExtChaining<K, V> implements HashTable<K, V>{
         int index = calculateIndex(key);
 
         // obtem a lista encadeada correspondente ao índice
-        LinkedList<Node<K, V>> list = table[index];
+        FrequencyLinkedList<K, V> list = table[index];
 
         // procura o nó com a chave e o remove se existir
         Node<K, V> nodeToRemove = null;
@@ -56,49 +56,52 @@ public class HashTableExtChaining<K, V> implements HashTable<K, V>{
         }
 
         if (nodeToRemove != null) {
-            list.remove(nodeToRemove);
+            list.remove(nodeToRemove.getKey());
         }
     }
 
     @Override
     public V searchByKey(K key) {
-        // calcula o indice da tabela hash usando a funçao de dispersao
-        int index = calculateIndex(key);
-
-        // obtem a lista encadeada correspondente ao indice
-        LinkedList<Node<K, V>> list = table[index];
-
-        // procura o no com a chave e retorna o valor associado se existir
-        for (Node<K, V> node : list) {
-            if (node.getKey().equals(key)) {
-                return node.getValue();
-            }
+        try {
+            // calcula o indice da tabela hash usando a funçao de dispersao
+            int index = calculateIndex(key);
+    
+            // obtem a lista encadeada correspondente ao indice
+            FrequencyLinkedList<K, V> list = table[index];
+    
+            V value = list.get(key);
+            
+            if(value == null)
+                throw new Exception("Nada encontrado");
+            else
+                return value;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+            // se não encontrar retorna null
         }
-
-        // se não encontrar retorna null
-        return null;
+            
     }
 
     @Override
-    public List<V> searchByValue(V value) {
-        List<V> result = new LinkedList<>();
+    public FrequencyLinkedList<K, V> searchByValue(V value) {
+        FrequencyLinkedList<K, V> result =new FrequencyLinkedList<>();
 
         // percorre todas as listas encadeadas na tabela hash
-        for (LinkedList<Node<K, V>> list : table) {
+        for (FrequencyLinkedList<K, V> list : table) {
             for (Node<K, V> node : list) {
                 if (node.getValue().equals(value)) {
-                    result.add(node.getValue());
+                    result.add(node.getKey(), node.getValue());
                 }
             }
         }
-
         return result;
     }
 
     @Override
     public double getLoadFactor() {
         int totalNodes = 0;
-        for (LinkedList<Node<K, V>> list : table) {
+        for (FrequencyLinkedList<K, V> list : table) {
             totalNodes += list.size();
         }
 
@@ -108,23 +111,31 @@ public class HashTableExtChaining<K, V> implements HashTable<K, V>{
     @Override
     public Integer getSize() {
         int totalNodes = 0;
-        for (LinkedList<Node<K, V>> list : table) {
+        for (FrequencyLinkedList<K, V> list : table) {
             totalNodes += list.size();
         }
 
         return totalNodes;
     }
 
-    // dispersão simples para calcular o indice da tabela hash
+    // dispersão DJB2
     private int calculateIndex(K key) {
-        int hashCode = key.hashCode();
-        return Math.abs(hashCode) % TABLE_SIZE;
+        int hash = 5381;
+        for (int i = 0; i < 11; i++) {
+            char character = ((String) key).charAt(i);
+            hash = ((hash << 5) + hash) + character;
+        }
+        // Certifique-se de que o valor hash é positivo
+        if (hash < 0) {
+            hash = -hash;
+        }
+        return hash % TABLE_SIZE;
     }
 
     @Override
     public Node<K, V> searchByAttribute(Object value, String attributeName) {
         // percorre todas as listas encadeadas na tabela hash
-        for (LinkedList<Node<K, V>> list : table) {
+        for (FrequencyLinkedList<K, V> list : table) {
             for (Node<K, V> node : list) {
                 // obtem o valor do atributo do Value
                 Object attributeValue = getAttributeValue(node.getValue(), attributeName);
@@ -141,11 +152,11 @@ public class HashTableExtChaining<K, V> implements HashTable<K, V>{
     }
 
     @Override
-    public List<Node<K, V>> getAllNodes(){
-        List<Node<K, V>> nodes = new ArrayList<>();
-        for(LinkedList<Node<K, V>> list : table){
+    public FrequencyLinkedList<K, V> getAllNodes(){
+        FrequencyLinkedList<K, V> nodes = new FrequencyLinkedList<>();
+        for(FrequencyLinkedList<K, V> list : table){
             for(Node<K, V> node : list){
-                nodes.add(node);
+                nodes.add(node.getKey(), node.getValue());
             }
         }
         return nodes;
@@ -164,4 +175,22 @@ public class HashTableExtChaining<K, V> implements HashTable<K, V>{
         }
     }
     
+    @Override
+    public Node<K, V> getNode(K key) {
+        // calcula o inndice da tabela hash usando a funçao de dispersao
+        int index = calculateIndex(key);
+    
+        // obtem a lista encadeada correspondente ao índice
+        FrequencyLinkedList<K, V> list = table[index];
+    
+        // procura o no com a chave e o retorna se existir
+        for (Node<K, V> node : list) {
+            if (node.getKey().equals(key)) {
+                return node;
+            }
+        }
+    
+        // se não encontrar, retorna null
+        return null;
+    }
 }

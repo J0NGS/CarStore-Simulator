@@ -2,13 +2,17 @@ package src.ED.HashTable;
 
 import java.util.List;
 
+import src.ED.LinkedList.FrequencyLinkedList;
+import src.ED.LinkedList.Node;
+
 public interface HashTable <K, V>{
     void insert(K key, V value);
     V searchByKey(K key);
-    List<V> searchByValue(V value);
+    FrequencyLinkedList<K, V> searchByValue(V value);
     Node<K, V> searchByAttribute(Object value, String attributeName);
-    List<Node<K,V>> getAllNodes(); 
+    FrequencyLinkedList<K, V> getAllNodes(); 
     void delete(K key);
     double getLoadFactor();
     Integer getSize();
+    public Node<K, V> getNode(K key);
 }

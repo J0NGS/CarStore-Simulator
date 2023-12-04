@@ -8,14 +8,15 @@ import java.util.Scanner;
 
 import src.ED.HashTable.HashTable;
 import src.ED.HashTable.HashTableExtChaining;
-import src.ED.HashTable.HashTableOpenAdress;
-import src.ED.HashTable.Node;
+import src.ED.LinkedList.Node;
+import src.Server.Compression.Huffman.HuffmanCompress;
+import src.Server.Compression.Huffman.Transport;
 import src.entity.Driver;
 import src.entity.Vehicle;
 
 public class ProtocolHashTable extends UnicastRemoteObject implements Protocol{
     private HashTable<String, Vehicle> hashTable;
-    
+
     public enum HashTableType{
         EXTERNAL_CHAINING,
         OPEN_ADRESS
@@ -45,7 +46,8 @@ public class ProtocolHashTable extends UnicastRemoteObject implements Protocol{
 
                     Vehicle vehicle = new Vehicle(carPlate, renavam, new Driver(driverName, driverCpf), model, yearProduction);
 
-                    insert(vehicle);
+                    hashTable.insert(vehicle.getRenavam(), vehicle);
+                    System.out.println("Veículo [" + vehicle.toString() + "] Inserido");
                     linesRead++;
                 }
             }
@@ -57,15 +59,18 @@ public class ProtocolHashTable extends UnicastRemoteObject implements Protocol{
     public ProtocolHashTable(HashTableType type) throws RemoteException{
         if(type.equals(HashTableType.EXTERNAL_CHAINING))
             hashTable = new HashTableExtChaining<>();
-        else
-            hashTable = new HashTableOpenAdress<>();
+        //else
+            //hashTable = new HashTableOpenAdress<>();
     }
 
     @Override
-    public void insert(Vehicle vehicle){
+    public void insert(Character[] vehicle, HuffmanCompress compressor){
         try {
-            hashTable.insert(vehicle.getRenavam(), vehicle);
-            System.out.println("Veículo [" + vehicle.toString() + "] Inserido");
+            String vehicleString = compressor.decompress(vehicle);
+            Vehicle vehicleObject = new Vehicle();
+            vehicleObject = vehicleObject.stringToVehicle(vehicleString);
+            hashTable.insert(vehicleObject.getRenavam(), vehicleObject);
+            System.out.println("Veículo [" + vehicleObject.toString() + "] Inserido");
 
             //Log
             System.out.println("Fator de carga ->" + hashTable.getLoadFactor());
@@ -75,42 +80,59 @@ public class ProtocolHashTable extends UnicastRemoteObject implements Protocol{
     }
 
     @Override
-    public boolean remove(Vehicle vehicle) {
+    public Transport remove(Character[] renavam, HuffmanCompress compressor) {
         try {
-            hashTable.delete(vehicle.getRenavam());
-            System.out.println("Renavam[" + vehicle.getRenavam() + "] Removido");
+            String renavamString = compressor.decompress(renavam);
+            hashTable.delete(renavamString);
+            System.out.println("Renavam[" + renavamString + "] Removido");
             //Log
             System.out.println("Fator de carga->" + hashTable.getLoadFactor());
-            return true;
+            HuffmanCompress newCompressor = new HuffmanCompress();
+            Transport transport = new Transport(newCompressor.compress("true"), newCompressor);
+            return transport;
         } catch (Exception e) {
             e.printStackTrace();
-            return false;
+            HuffmanCompress newCompressor = new HuffmanCompress();
+            Transport transport = new Transport(newCompressor.compress("false"), newCompressor);
+            return transport;
         }
     }
 
 
     @Override
-    public Vehicle search(String renavam) {
+    public Transport search(Character[] renavam, HuffmanCompress compressor) {
         try {
-            Vehicle vehicle = hashTable.searchByKey(renavam);
+            String reanavamString = compressor.decompress(renavam);
+            Vehicle vehicle = hashTable.searchByKey(reanavamString);
             if(vehicle == null)
                 throw new Exception("Nenhum elemento encontrado na busca pelo Renavam[" + renavam + "]"); 
-            return vehicle;
+            HuffmanCompress newCompressor = new HuffmanCompress();
+            Transport transport = new Transport(newCompressor.compress(vehicle.toString()), newCompressor);
+            System.out.println("Elemento encontrado com renavam [ " + vehicle.getRenavam() + " ]\n" + "Contador de  frequência do node" +" [" + hashTable.getNode(reanavamString).getFrequency() +" ]");
+            return transport;
         } catch (Exception e) {
-            e.getMessage();
-            return null;
+            HuffmanCompress newCompressor = new HuffmanCompress();
+            Transport transport = new Transport(newCompressor.compress(e.getMessage()), newCompressor);
+            return transport;
         }
     }
 
     @Override
-    public Vehicle searchByPlate(String plate) {
+    public Transport searchByPlate(Character[] plate, HuffmanCompress compressor) {
         try {
+            String plateString = compressor.decompress(plate);
+            
             //Mais lento, percorro toda a hashtable para poder encontrar
-            Node<String, Vehicle> nodeFound = hashTable.searchByAttribute(plate, "carPlate");
+            Node<String, Vehicle> nodeFound = hashTable.searchByAttribute(plateString, "carPlate");
             if (nodeFound == null)
                 throw new Exception("Não encontrado nenhum valor");
-            else
-                return nodeFound.getValue();
+            else{
+                HuffmanCompress newCompressor = new HuffmanCompress();
+                Transport transport = new Transport(newCompressor.compress(nodeFound.getValue().toString()), newCompressor);
+                System.out.println("Elemento encontrado com placa [ " + plateString + " ]\n" + "Contador de  frequência do node" +" [" + 
+                    hashTable.getNode(nodeFound.getValue().getRenavam()).getFrequency() +" ]");
+                return transport;
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -118,23 +140,29 @@ public class ProtocolHashTable extends UnicastRemoteObject implements Protocol{
     }
 
     @Override
-    public int size(){
+    public Transport size(){
         try {
-            return hashTable.getSize();
+            HuffmanCompress compressor = new HuffmanCompress();
+            Transport transport = new Transport(compressor.compress(hashTable.getSize().toString()), compressor);
+            return transport;
         } catch (Exception e) {
             e.printStackTrace();
-            return -1;
+            return null;
         }
     }
 
     @Override
-    public void update(Vehicle newVehicle) {
+    public void update(Character[] newVehicle, HuffmanCompress compressor) {
         try {
+            String vehicleString = compressor.decompress(newVehicle);
+            Vehicle vehicleObject = new Vehicle();
+            vehicleObject = vehicleObject.stringToVehicle(vehicleString);
+
             // Garantindo que veículo existe
-            if(hashTable.searchByKey(newVehicle.getRenavam()) ==  null){
-                throw new Exception("Nenhum veiculo encontrado com o renavam [" + newVehicle.getRenavam()+ "]");
+            if(hashTable.searchByKey(vehicleObject.getRenavam()) ==  null){
+                throw new Exception("Nenhum veiculo encontrado com o renavam [" + vehicleObject.getRenavam()+ "]");
             } else{
-                hashTable.searchByAttribute(newVehicle.getRenavam(), "renavam").setValue(newVehicle);
+                hashTable.searchByAttribute(vehicleObject.getRenavam(), "renavam").setValue(vehicleObject);
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -143,20 +171,24 @@ public class ProtocolHashTable extends UnicastRemoteObject implements Protocol{
 
 
     @Override
-    public List<Vehicle> listAll(){
+    public List<Transport> listAll(){
         try {
             List<Vehicle> vehicles = new ArrayList<>();
+            List<Transport> transports = new ArrayList<>();
             for(Node<String, Vehicle> node : hashTable.getAllNodes()){
                 vehicles.add(node.getValue());
             }
             if(vehicles.isEmpty())
                 throw new Exception("Nennhum veiculo retornado");
-            return vehicles;
+            for(Vehicle node : vehicles){
+                HuffmanCompress compressor = new HuffmanCompress();
+                Transport trasport = search(compressor.compress(node.getRenavam().toString()), compressor);
+                transports.add(trasport);
+            }
+            return transports;
         } catch (Exception e) {
             e.printStackTrace();
-            return new ArrayList<Vehicle>();
+            return null;
         }
     }
-
-
 }

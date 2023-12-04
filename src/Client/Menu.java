@@ -5,14 +5,15 @@ import java.util.List;
 import java.util.Scanner;
 
 import src.Server.Protocol;
+import src.Server.ProtocolHashTable;
+import src.Server.Compression.Huffman.HuffmanCompress;
+import src.Server.Compression.Huffman.Transport;
 import src.entity.Driver;
 import src.entity.Vehicle;
 
 
 public class Menu {
     private Protocol server;
-    
-    
     //Inicializa o servidor de interação
     public Menu(Protocol server) {
         this.server = server;
@@ -39,7 +40,6 @@ public class Menu {
     //Metodo para executar instrução de acordo com a opção selecionada
     public void run(int option){
         Scanner scn = new Scanner(System.in);
-
         switch(option){
             //Exit
             case 0:{
@@ -79,10 +79,13 @@ public class Menu {
                     vehicle.setDriver(driver);
                     
                     //Inserindo de acordo com protocolo do servidor
-                    server.insert(vehicle);
-                } catch (RemoteException e) {
-                    e.printStackTrace();
+                    HuffmanCompress compressor = new HuffmanCompress();
+                    Character[] compressedVehicle = compressor.compress(vehicle.toString());
+                    server.insert(compressedVehicle, compressor);
                 } catch(NumberFormatException e){
+                    e.printStackTrace();
+                } catch (RemoteException e) {
+                    // TODO Auto-generated catch block
                     e.printStackTrace();
                 }
                 break;
@@ -93,12 +96,14 @@ public class Menu {
                     limpatela();
                     Vehicle vehicle = new Vehicle();
                     Driver driver = new Driver();
-                    
+                    HuffmanCompress compressor = new HuffmanCompress();
+
                     System.out.println("======Atualização de veiculo======");
                     System.out.print(".Renavam(Chave de busca): ");
-                    vehicle.setRenavam(scn.nextLine());
+
+                    String renavam = scn.nextLine();
                         //Garantindo que veiculo existe
-                        if(this.server.search(vehicle.getRenavam()) != null){
+                    if(this.server.search(compressor.compress(renavam), compressor).getMessage() != null){
                         System.out.println("\n.======Dados atualizados======");
                         System.out.print("\n.Placa do carro: ");
                         vehicle.setCarPlate(scn.nextLine());
@@ -116,9 +121,11 @@ public class Menu {
                         System.out.print("\n.Cpf do condutor(apenas digitos): ");
                         driver.setCpf(scn.nextLine());
                         vehicle.setDriver(driver);
+                        vehicle.setRenavam(renavam);
                         
                         //Atualizando de acordo com protocolo do servidor
-                        server.update(vehicle);
+                        HuffmanCompress newCompressor = new HuffmanCompress();
+                        server.update(newCompressor.compress(vehicle.toString()), newCompressor);
                         }
                         else{
                             throw new Exception("Nenhum veículo encontrado com esse Renavam");
@@ -135,10 +142,15 @@ public class Menu {
                 System.out.print(".Renavam(Chave de busca): ");
 
                 try {
-                    Vehicle result = server.search(scn.nextLine());
-                    if(result == null)
+                    Vehicle result = new Vehicle();
+                    HuffmanCompress compressor = new HuffmanCompress();
+                    Transport trasporteReceive = server.search(compressor.compress(scn.nextLine()), compressor);
+                    String vehicleString = trasporteReceive.getCompressor().decompress(trasporteReceive.getMessage());
+                    result = result.stringToVehicle(vehicleString);
+                    if(vehicleString.isBlank())
                         throw new Exception("Nenhum dado encontrado");
                     else{
+                        result = result.stringToVehicle(vehicleString);  
                         System.out.println("\n------------------------------------");
                         System.out.println("Placa---> " + result.getCarPlate());
                         System.out.println("Renavam-> " + result.getRenavam());
@@ -160,10 +172,14 @@ public class Menu {
                 System.out.print(".Placa do carro(Chave de busca): ");
 
                 try {
-                    Vehicle result = server.searchByPlate(scn.nextLine());
-                    if(result == null)
+                    Vehicle result = new Vehicle();
+                    HuffmanCompress compressor = new HuffmanCompress();
+                    Transport trasporteReceive = server.searchByPlate(compressor.compress(scn.nextLine()), compressor);
+                    String vehicleString = trasporteReceive.getCompressor().decompress(trasporteReceive.getMessage());
+                    if(vehicleString.isBlank())
                         throw new Exception("Nenhum dado encontrado");
                     else{
+                        result = result.stringToVehicle(vehicleString);  
                         System.out.println("\n------------------------------------");
                         System.out.println("Placa---> " + result.getCarPlate());
                         System.out.println("Renavam-> " + result.getRenavam());
@@ -183,12 +199,12 @@ public class Menu {
                 try {
                     limpatela();
                     
-                    Vehicle vehicle = new Vehicle();
                     System.out.println("======Remoção de veiculo======");
                     System.out.print(".Renavam(Chave de busca): ");
-                    vehicle.setRenavam(scn.nextLine());
-                    
-                    server.remove(vehicle);
+
+                    HuffmanCompress compressor = new HuffmanCompress();
+
+                    server.remove(compressor.compress(scn.nextLine()),  compressor);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -201,16 +217,19 @@ public class Menu {
                 System.out.println("======Listagem de todos os veiculos======");
                 
                 try {
-                    List<Vehicle> list = server.listAll();
-                    for(int i = 0; i < list.size(); i++){
+                    List<Transport> transports = server.listAll();
+                    for(Transport transport : transports){
+                        String str = transport.getCompressor().decompress(transport.getMessage());
+                        Vehicle vehicle = new Vehicle();
+                        vehicle = vehicle.stringToVehicle(str);
+                        System.out.println("\n------------------------------------");
+                        System.out.println("Placa---> " + vehicle.getCarPlate());
+                        System.out.println("Renavam-> " + vehicle.getRenavam());
+                        System.out.println("Condutor->" + vehicle.getDriver().getName() + "     Cpf do condutor-> " + vehicle.getDriver().getCpf());
+                        System.out.println("Modelo--> " + vehicle.getModel());
+                        System.out.println("Ano de fabricação-> " + vehicle.getYearProduction());
                         System.out.println("------------------------------------");
-                        System.out.println("Carro n°: " + (i + 1));
-                        System.out.println("Placa---> " + list.get(i).getCarPlate());
-                        System.out.println("Renavam-> " + list.get(i).getRenavam());
-                        System.out.println("Condutor->" + list.get(i).getDriver().getName() + "     Cpf do condutor-> " + list.get(i).getDriver().getCpf());
-                        System.out.println("Modelo--> " + list.get(i).getModel());
-                        System.out.println("Ano de fabricação-> " + list.get(i).getYearProduction());
-                        System.out.println("------------------------------------");
+
                     }
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -222,7 +241,8 @@ public class Menu {
             case 7:{
                 limpatela();
                 try {
-                    int cars = server.size();
+                    Transport transport = server.size();
+                    String cars = transport.getCompressor().decompress(transport.getMessage()).toString();
                     System.out.println("======Total de "+ cars +" salvos======");
                 } catch (Exception e) {
                     e.printStackTrace();

@@ -24,7 +24,7 @@ public class Server {
             System.out.println("Waiting for requests...");
 			
             // Criando um arquivo para redirecionar a saída
-            File logFile = new File("E:/Documentos/Projetos/joao-goncalo-pratica-off-1-main/src/Server/serverLog.txt");
+            File logFile = new File("E:/Documentos/Projetos/joao-goncalo-pratica-off-1-main/arquivos/serverLog.txt");
             PrintStream printStream = new PrintStream(new FileOutputStream(logFile));
             
             // Redirecionando a saída padrão
